@@ -1,0 +1,15 @@
+openmrs.log.classpath
+.project
+.settings/
+.vscode/
+.idea/
+qaframework.iml
+target/
+node/
+package-lock.json
+cypress/screenshots
+cypress/videos
+node_modules/
+openmrs.log
+.classpath
+.DS_Store
