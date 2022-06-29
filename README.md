@@ -58,7 +58,7 @@ There are two ways of running tests:
     ```
    and pick a test from the GUI.
 
-1. **Running in command line**
+2. **Running in command line**
 
    Run the desired test using `npm run`, e.g.
 
@@ -114,10 +114,10 @@ Tests might be timed out on slow internet connections. In that case, try increas
 
    [Example of a feature file](https://github.com/openmrs/openmrs-contrib-qaframework/blob/master/qaframework-bdd-tests/src/test/resources/features/refapp-2.x/stylesGuide.feature)
 
-1. Create a new directory with the same name under  `cypress/integration/cucumber/step_definitions/refapp-3.x/` to store the step definition file.
+2. Create a new directory with the same name under  `cypress/integration/cucumber/step_definitions/refapp-3.x/` to store the step definition file.
    See the [cypress-cucumber-preprocessor docs](https://github.com/TheBrainFamily/cypress-cucumber-preprocessor#readme)
 
-1. Run the test using either:
+3. Run the test using either:
     - Command line: `cypress run --spec <path-to-feature-file>`
 
       (You can simplify the command by adding it to the npm scripts section. See [this example](https://github.com/openmrs/openmrs-contrib-qaframework/blob/f9996d757912ba7ccfb1ff3495379bbafaf89f23/package.json#L19).)
@@ -125,7 +125,7 @@ Tests might be timed out on slow internet connections. In that case, try increas
 
 ## Creating a GitHub workflow
 1. Create a new GitHub workflow file under `.github/workflows/` directory. An example workflow can be found [here](https://github.com/openmrs/openmrs-contrib-qaframework/blob/master/.github/workflows/refapp-3x-login.yml).
-1. Add the workflow badge to the readme file under [3.x RefApp](https://github.com/openmrs/openmrs-contrib-qaframework/blob/master/README.md#3x-refapp) section. It should take the following format:
+2. Add the workflow badge to the readme file under [3.x RefApp](https://github.com/openmrs/openmrs-contrib-qaframework/blob/master/README.md#3x-refapp) section. It should take the following format:
     ```markdown
     [![<workflow name>](<link-to-the-workflow>/badge.svg)](<link-to-the-workflow>)
     ```
