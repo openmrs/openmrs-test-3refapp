@@ -6,7 +6,7 @@ ___
 | 3.x RefApp Workflow Tests |
 |---------------------------|
 [3.x Demo Build](https://ci.openmrs.org/browse/REFAPP-D3X) ![Build Status](https://ci.openmrs.org/plugins/servlet/wittified/build-status/REFAPP-D3X)
-[![RefApp 3.x Login](https://github.com/openmrs/openmrs-contrib-qaframework/actions/workflows/refapp-3x-login.yml/badge.svg)](https://github.com/openmrs/openmrs-contrib-qaframework/actions/workflows/refapp-3x-login.yml)
+[![RefApp 3.x Login](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-login.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-login.yml)
 ___
 
 
