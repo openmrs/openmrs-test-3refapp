@@ -22,8 +22,21 @@ ___
     npm install
     ```
 
-## Set up the local instance.
+### Run the local instance
 
+1. Checkout to docker directory
+   ```
+   cd docker
+   ```
+
+2. Run the app 
+   ```      
+   docker-compose -f docker-compose-refqa-3x.yml up
+   ```
+
+### If the docker container doesn't work you have to set up the local instance by packaging.
+
+Follow this steps for setting up the local instance
 1. Clone the repository and navigate
     ```
     git clone -b 3.x git@github.com:openmrs/openmrs-distro-referenceapplication.git
@@ -47,7 +60,7 @@ ___
     docker-compose up
     ```
 
-## Running tests`
+## Running tests
 
 There are two ways of running tests:
 
