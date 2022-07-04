@@ -1,5 +1,5 @@
 {
-  "integrationFolder": "src/test/resources/features/",
+  "integrationFolder": "resources/features/",
   "testFiles": [
     "*.feature",
     "**/*.feature"

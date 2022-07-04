@@ -103,20 +103,18 @@ Tests might be timed out on slow internet connections. In that case, try increas
 │   │   └── index.js
 │   ├── videos  // Screen recordings (set "video": true in cypress.json)
 │   └── tsconfig.json
-├── src
-│   └── test
-│       ├── java
-│       └── resources
-│           ├── features
-│           │   └── refapp-3.x // Cucumber feature files for the refapp 3.x
-│           │       ├── 01-login
-│           │       │   └── login.feature
-│           │       ...
-├── target
+├── resources
+│   ├── features
+│   │   └── refapp-3.x // Cucumber feature files for the refapp 3.x
+│   │       ├── 01-login
+│   │       │   └── login.feature
+│   │       ...
+├── docker
+│   ├── features
+│           └── docker-compose-refqa-3x.yml
 ├── README.md
 ├── cypress.json // Cypress configuration file
 ├── package.json
-├── pom.xml
 ```
 
 
