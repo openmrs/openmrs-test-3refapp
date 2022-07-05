@@ -6,7 +6,7 @@ ___
 | 3.x RefApp Workflow Tests |
 |---------------------------|
 [3.x Demo Build](https://ci.openmrs.org/browse/REFAPP-D3X) ![Build Status](https://ci.openmrs.org/plugins/servlet/wittified/build-status/REFAPP-D3X)
-[![RefApp 3.x Login](https://github.com/openmrs/openmrs-contrib-qaframework/actions/workflows/refapp-3x-login.yml/badge.svg)](https://github.com/openmrs/openmrs-contrib-qaframework/actions/workflows/refapp-3x-login.yml)
+[![RefApp 3.x Login](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-login.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-login.yml)
 ___
 
 
@@ -22,8 +22,21 @@ ___
     npm install
     ```
 
-## Set up the local instance.
+### Run the local instance
 
+1. Checkout to docker directory
+   ```
+   cd docker
+   ```
+
+2. Run the app 
+   ```      
+   docker-compose -f docker-compose-refqa-3x.yml up
+   ```
+
+### If the docker container doesn't work you have to set up the local instance by packaging.
+
+Follow this steps for setting up the local instance
 1. Clone the repository and navigate
     ```
     git clone -b 3.x git@github.com:openmrs/openmrs-distro-referenceapplication.git
@@ -47,7 +60,7 @@ ___
     docker-compose up
     ```
 
-## Running tests`
+## Running tests
 
 There are two ways of running tests:
 
@@ -90,20 +103,18 @@ Tests might be timed out on slow internet connections. In that case, try increas
 │   │   └── index.js
 │   ├── videos  // Screen recordings (set "video": true in cypress.json)
 │   └── tsconfig.json
-├── src
-│   └── test
-│       ├── java
-│       └── resources
-│           ├── features
-│           │   └── refapp-3.x // Cucumber feature files for the refapp 3.x
-│           │       ├── 01-login
-│           │       │   └── login.feature
-│           │       ...
-├── target
+├── resources
+│   ├── features
+│   │   └── refapp-3.x // Cucumber feature files for the refapp 3.x
+│   │       ├── 01-login
+│   │       │   └── login.feature
+│   │       ...
+├── docker
+│   ├── features
+│           └── docker-compose-refqa-3x.yml
 ├── README.md
 ├── cypress.json // Cypress configuration file
 ├── package.json
-├── pom.xml
 ```
 
 
