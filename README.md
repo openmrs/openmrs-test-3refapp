@@ -119,7 +119,7 @@ Tests might be timed out on slow internet connections. In that case, try increas
 
 
 ## Writing a new test
-1. Create a new directory with your feature file under `/src/test/resources/features/refapp-3.x/`.
+1. Create a new directory with your feature file under `/resources/features/refapp-3.x/`.
 
    The name of the directory should be `<sequence>-<name>`.
 
