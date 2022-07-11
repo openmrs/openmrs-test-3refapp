@@ -2,7 +2,7 @@ import {Given} from 'cypress-cucumber-preprocessor/steps';
 
 beforeEach("Take a dump of the database",() => {
     //Run the script using npm
-    cy.exec("npm run dumpDB")
+    cy.exec("npm run resetDB")
 })
 
 Given('user arrives at the login page', () => {
