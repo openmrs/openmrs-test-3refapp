@@ -10,5 +10,5 @@ Feature: Patient Registration
     Then the patient registration should be "<status>"
     Examples:
       | validity   | status       |
-      | correct      | successful   |
+      | correct    | successful   |
       | wrong      | unsuccessful |
