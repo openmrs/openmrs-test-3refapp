@@ -8,12 +8,10 @@ DUMP="openmrs.sql"
 
 if [ -f "$DUMP" ]; then
     echo "$DUMP exists."
-    mysql -u openmrs -p openmrs < openmrs.sql
-      echo "Database restore successful"
+    mysql -h 127.0.0.1 -P 3306 -u openmrs -popenmrs openmrs < openmrs.sql
+    echo "Database restore successful"
 else
     echo "$DUMP does not exist."
-    mysqldump -u openmrs -p openmrs > openmrs.sql;
-      echo "Database dump successful"
-    mysql -u openmrs -p openmrs < openmrs.sql
-      echo "Database restore successful"
+    mysqldump -h 127.0.0.1 -P 3306 -u openmrs -popenmrs openmrs > openmrs.sql
+    echo "Database dump successful"
 fi
