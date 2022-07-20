@@ -10,7 +10,6 @@ Given('the user login to the Outpatient Clinic', () => {
 })
 
 When('the user clicks on the add patient icon', () => {
-    cy.get('button[name=SearchPatientIcon]');
     cy.get('button[name=AddPatientIcon]').click();
 })
 
@@ -21,7 +20,7 @@ When('the user enters {string} details for Andria Faiza', validity => {
             middleName: 'Kumbha',
             familyName: 'Faiza',
             gender: 'Female',
-            address: '55372,test',
+            address1: '55372,test',
             cityVillage: 'Nairobi',
             stateProvince: 'Nairobi',
             country: 'Kenya',
@@ -33,7 +32,7 @@ When('the user enters {string} details for Andria Faiza', validity => {
             middleName: 'Kumbha',
             familyName: 'Mwangi',
             gender: 'Female',
-            address: null,
+            address1: null,
             cityVillage: null,
             stateProvince: null,
             country: null,
