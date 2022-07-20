@@ -1,12 +1,12 @@
-import {Given, After, Before} from 'cypress-cucumber-preprocessor/steps';
+import {Given} from 'cypress-cucumber-preprocessor/steps';
 
 let patient_uuid = null;
 
-Before({tags: '@patient-involved'}, () => {
+before({tags: '@patient-involved'}, () => {
     cy.createPatient().then((user) => {
         patient_uuid = user.uuid;
     });
-});
+})
 
 Given('the user login to the Outpatient Clinic', () => {    
     cy.on('uncaught:exception', (err, runnable) => {
@@ -30,7 +30,7 @@ Then('the result should be {string}', result => {
     
 });
 
-After({tags: '@patient-involved'}, () => {
+after({tags: '@patient-involved'}, () => {
     cy.deletePatient(patient_uuid);
 });
 
