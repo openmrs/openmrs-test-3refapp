@@ -37,27 +37,16 @@ ___
 ### If the docker container doesn't work you have to set up the local instance by packaging.
 
 Follow this steps for setting up the local instance
-1. Clone the repository and navigate
+1. Clone the repository
     ```
     git clone -b 3.x git@github.com:openmrs/openmrs-distro-referenceapplication.git
-    cd openmrs-distro-referenceapplication
     ```
 
-2. Package the distribution and prepare the run
-    ```
-    mvn clean package
-    ```
+2. Follow the instruction provided by the [readme](https://github.com/openmrs/openmrs-distro-referenceapplication/tree/3.x/#readme)
 
 * If the build fails, try deleting existing containers
     ```
-    cd run/docker
     docker compose down -v
-    ```
-* Then package the distribution again
-
-3. Run the app
-    ```
-    docker-compose up
     ```
 
 ## Running tests
@@ -119,7 +108,7 @@ Tests might be timed out on slow internet connections. In that case, try increas
 
 
 ## Writing a new test
-1. Create a new directory with your feature file under `/src/test/resources/features/refapp-3.x/`.
+1. Create a new directory with your feature file under `/resources/features/refapp-3.x/`.
 
    The name of the directory should be `<sequence>-<name>`.
 

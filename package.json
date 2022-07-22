@@ -13,7 +13,8 @@
     "refapp3PatientSearch": "cypress run --spec resources/features/refapp-3.x/06-patient-search/patient-search.feature",
     "refapp3Settings": "cypress run --spec resources/features/refapp-3.x/03-settings/settings.feature",
     "refapp3ClinicalVisit": "cypress run --spec resources/features/refapp-3.x/04-clinical-visit/clinical-visit.feature",
-    "refapp3VitalsAndTriage": "cypress run --spec resources/features/refapp-3.x/05-vitals-and-triage/vitals-and-triage.feature"
+    "refapp3VitalsAndTriage": "cypress run --spec resources/features/refapp-3.x/05-vitals-and-triage/vitals-and-triage.feature",
+    "resetDB" : "bash scripts/resetDB.sh"
   },
   "devDependencies": {
     "@testing-library/cypress": "^8.0.0",
