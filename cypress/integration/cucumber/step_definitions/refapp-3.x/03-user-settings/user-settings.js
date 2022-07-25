@@ -2,11 +2,6 @@ import {Given, After, Before} from 'cypress-cucumber-preprocessor/steps';
 
 let patient_uuid = null;
 
-beforeEach("Take a dump of the database and restore",() => {
-    //Run the script using npm
-    cy.exec("npm run resetDB")
-})
-
 Before({tags: '@patient-involved'}, () => {
     cy.createPatient().then((user) => {
         patient_uuid = user.uuid;
