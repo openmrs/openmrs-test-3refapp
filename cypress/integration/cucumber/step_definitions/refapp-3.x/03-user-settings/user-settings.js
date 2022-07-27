@@ -8,11 +8,7 @@ Before({tags: '@patient-involved'}, () => {
     });
 });
 
-Given('the user is logged in', () => { 
-    cy.on('uncaught:exception', (err, runnable) => {
-    	console.log(err);
-    	return false;
-    });
+Given('the user is logged in', () => {
     cy.login();
 })
 
