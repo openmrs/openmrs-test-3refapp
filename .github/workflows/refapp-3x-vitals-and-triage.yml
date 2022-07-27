@@ -1,4 +1,4 @@
-name: RefApp 3.x Patient Registration
+name: RefApp 3.x Vitals and Biometrics
 on:
   push:
     branches: [ main ]
@@ -22,7 +22,7 @@ jobs:
       - name: Using Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '12.x' 
+          node-version: '12.x'
       - name: Installing dependencies
         run: npm install
       - name: Run Vitals and triage workflow tests
