@@ -1,8 +1,8 @@
 import {Given} from 'cypress-cucumber-preprocessor/steps';
 
-beforeEach("Take a dump of the database and restore",() => {
+beforeEach("Restore Database",() => {
     //Run the script using npm
-    cy.exec("npm run resetDB")
+    cy.exec("bash scripts/resetDB.sh  ")
 })
 
 Given('user arrives at the login page', () => {
