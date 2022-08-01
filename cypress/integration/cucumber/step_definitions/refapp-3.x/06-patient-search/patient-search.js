@@ -2,9 +2,9 @@ import {Given} from 'cypress-cucumber-preprocessor/steps';
 
 let patient_uuid = null;
 
-beforeEach("Take a dump of the database and restore",() => {
+beforeEach("Restore Database",() => {
     //Run the script using npm
-    cy.exec("npm run resetDB")
+    cy.exec("bash scripts/resetDB.sh")
 })
 
 before({tags: '@patient-involved'}, () => {
