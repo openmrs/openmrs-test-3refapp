@@ -394,3 +394,6 @@ Cypress.Commands.add('deletePatient', (uuid) => {
     });
 });
 
+Cypress.Commands.add('restoreDB', () => {
+    cy.exec("bash scripts/resetDB.sh")
+});

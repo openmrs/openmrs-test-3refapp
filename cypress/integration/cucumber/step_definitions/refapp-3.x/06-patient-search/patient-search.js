@@ -2,22 +2,15 @@ import {Given} from 'cypress-cucumber-preprocessor/steps';
 
 let patient_uuid = null;
 
-beforeEach("Restore Database",() => {
-    //Run the script using npm
-    cy.exec("bash scripts/resetDB.sh")
-})
-
 before({tags: '@patient-involved'}, () => {
     cy.createPatient().then((user) => {
         patient_uuid = user.uuid;
     });
 })
 
-Given('the user login to the Outpatient Clinic', () => {    
-    cy.on('uncaught:exception', (err, runnable) => {
-    	console.log(err);
-    	return false;
-    });
+Given('the user login to the Outpatient Clinic', () => {
+    //Restore the database
+    cy.restoreDB();
     cy.login();
     cy.visit('home');
 })

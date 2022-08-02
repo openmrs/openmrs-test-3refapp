@@ -1,15 +1,8 @@
 import {Given} from 'cypress-cucumber-preprocessor/steps';
 
-beforeEach("Restore Database",() => {
-    //Run the script using npm
-    cy.exec("bash scripts/resetDB.sh   ")
-})
-
 Given('the user login to the Outpatient Clinic', () => {
-    cy.on('uncaught:exception', (err, runnable) => {
-    	console.log(err);
-    	return false;
-    });
+    //restore the database
+    cy.restoreDB();
     cy.login();
     cy.visit('home');
 })
