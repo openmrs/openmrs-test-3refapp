@@ -7,6 +7,11 @@ const ADMIN_PASSWORD = Cypress.env('ADMIN_PASSWORD');
 const DEFAULT_LOCATION_UUID = Cypress.env('DEFAULT_LOCATION_UUID');
 const TOKEN = window.btoa(`${ADMIN_USERNAME}:${ADMIN_PASSWORD}`);
 
+beforeEach("Restore database",() => {
+    //Run the script
+    cy.exec("bash scripts/resetDB.sh");
+})
+
 Cypress.Commands.add('runAndAwait', (callable, method='GET', addArtificialWait=false) => {
     const requestId = `apiRequest-${uuid()}`;
 
@@ -393,4 +398,3 @@ Cypress.Commands.add('deletePatient', (uuid) => {
         },
     });
 });
-
