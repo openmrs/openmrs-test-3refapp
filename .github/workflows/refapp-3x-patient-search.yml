@@ -1,7 +1,7 @@
 name: RefApp 3.x Patient Search
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 */12 * * *"
   push:
     branches: [ main ]
   pull_request:
