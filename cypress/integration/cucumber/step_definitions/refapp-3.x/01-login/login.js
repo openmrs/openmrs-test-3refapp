@@ -1,8 +1,6 @@
 import {Given} from 'cypress-cucumber-preprocessor/steps';
 
 Given('user arrives at the login page', () => {
-    //Restore the database
-    cy.restoreDB();
     cy.visit('/login');
 })
 

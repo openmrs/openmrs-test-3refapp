@@ -9,8 +9,6 @@ before({tags: '@patient-involved'}, () => {
 })
 
 Given('the user login to the Outpatient Clinic', () => {
-    //Restore the database
-    cy.restoreDB();
     cy.login();
     cy.visit('home');
 })

@@ -1,8 +1,6 @@
 import {Given} from 'cypress-cucumber-preprocessor/steps';
 
 Given('the user login to the Outpatient Clinic', () => {
-    //restore the database
-    cy.restoreDB();
     cy.login();
     cy.visit('home');
 })
