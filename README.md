@@ -21,7 +21,7 @@ ___
     ```
 2. Install the dependencies
     ```
-    npm install
+    yarn install
     ```
 
 ### Run the local instance
@@ -64,10 +64,10 @@ There are two ways of running tests:
 
 2. **Running in command line**
 
-   Run the desired test using `npm run`, e.g.
+   Run the desired test using `yarn run`, e.g.
 
     ```
-    npm run refapp3Login
+    yarn run refapp3Login
     ```
 
    See the `scripts` section of [package.json](https://github.com/openmrs/openmrs-test-3refapp/package.json).
@@ -122,7 +122,7 @@ Tests might be timed out on slow internet connections. In that case, try increas
 3. Run the test using either:
     - Command line: `cypress run --spec <path-to-feature-file>`
 
-      (You can simplify the command by adding it to the npm scripts section. See [this example](https://github.com/openmrs/openmrs-contrib-qaframework/blob/f9996d757912ba7ccfb1ff3495379bbafaf89f23/package.json#L19).)
+      (You can simplify the command by adding it to the yarn scripts section. See [this example](https://github.com/openmrs/openmrs-contrib-qaframework/blob/f9996d757912ba7ccfb1ff3495379bbafaf89f23/package.json#L19).)
     - Cypress runner: `cypress open` and choose the test
 
 ## Creating a GitHub workflow
