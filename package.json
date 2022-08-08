@@ -9,6 +9,7 @@
   "scripts": {
     "refappCypress": "./node_modules/.bin/cypress-tags run -eTAGS='@cypress and not @microfrontend'",
     "refapp3Login": "cypress run --spec resources/features/refapp-3.x/01-login/login.feature",
+    "refapp3Logout": "cypress run --spec resources/features/refapp-3.x/07-logout/logout.feature",
     "refapp3PatientRegistration": "cypress run --spec resources/features/refapp-3.x/02-patient-registration/patient-registration.feature",
     "refapp3PatientSearch": "cypress run --spec resources/features/refapp-3.x/06-patient-search/patient-search.feature",
     "refapp3Settings": "cypress run --spec resources/features/refapp-3.x/03-settings/settings.feature",
