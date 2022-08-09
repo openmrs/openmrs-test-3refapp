@@ -7,7 +7,6 @@ Given('the user login to the Outpatient Clinic', () => {
 
 When('the user logout from the application', () => {
     cy.get('button[name=Users]').click();
-    cy.wait(1000);
     cy.get('button[role=button]').click();
 })
 
