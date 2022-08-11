@@ -22,7 +22,9 @@
   "workspaces": [
     "packages/*"
   ],
-  "scripts": {},
+  "scripts": {
+    "format": "prettier \"packages/**/src/**/*\" --write"
+  },
   "devDependencies": {
     "prettier": "2.7.1"
   }
