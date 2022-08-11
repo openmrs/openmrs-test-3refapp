@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/openmrs/openmrs-test-3refapp#readme",
   "engines": {
-    "node": ">=14.15.5",
+    "node": ">=14",
     "npm": ">=7.5.3"
   },
   "workspaces": [
