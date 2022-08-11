@@ -54,7 +54,30 @@ Follow this steps for setting up the local instance
 
 ## Running tests
 
-There are two ways of running tests:
+This repository is a monorepo which contains two different test projects which leverage
+two different test frameworks: Cypress and Playwright.
+The reason for the split is that Cypress, at the time of writing this, has a
+[known issue](https://github.com/cypress-io/cypress/issues/235) that prevents testing
+the offline features that have been introduced to the OpenMRS frontend.
+The Playwright framework supports offline mode. Therefore, we use this framework to
+write offline related E2E tests.
+
+Before you can run any tests, ensure that all dependencies are installed by running
+the following command in the repository's root directory:
+
+```sh
+yarn install
+```
+
+### Running Cypress Tests
+
+To prepare, navigate to the `/packages/cypress` directory:
+
+```sh
+cd packages/cypress
+```
+
+Once inside, there are two ways of running tests:
 
 1. **Running with cypress runner**
    Open the Cypress runner with
@@ -110,7 +133,10 @@ Tests might be timed out on slow internet connections. In that case, try increas
 ```
 
 
-## Writing a new test
+## Writing a new Cypress test
+
+Given that you are inside the `/packages/cypress` directory:
+
 1. Create a new directory with your feature file under `/resources/features/refapp-3.x/`.
 
    The name of the directory should be `<sequence>-<name>`.
@@ -133,7 +159,7 @@ Tests might be timed out on slow internet connections. In that case, try increas
     [![<workflow name>](<link-to-the-workflow>/badge.svg)](<link-to-the-workflow>)
     ```
 
-## Environment variables
+## Environment variables (Cypress)
 
 The environment variables are stored in the `cypress.json` file. The variables can be accessed with `Cypress.env()`; e.g.,
 ```typescript
