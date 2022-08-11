@@ -7,12 +7,13 @@ qaframework.iml
 target/
 node/
 package-lock.json
-cypress/screenshots
-cypress/videos
+**/cypress/screenshots/
+**/cypress/videos
 node_modules/
 openmrs.log
 .classpath
 .DS_Store
+*.sql
 
 # Playwright output
 playwright-report
