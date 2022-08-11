@@ -13,3 +13,8 @@ node_modules/
 openmrs.log
 .classpath
 .DS_Store
+
+# Playwright output
+playwright-report
+playwright/.cache/*
+test-results
