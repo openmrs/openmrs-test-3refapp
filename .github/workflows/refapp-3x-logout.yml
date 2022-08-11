@@ -26,12 +26,12 @@ jobs:
         with:
           node-version: '12.x'
       - name: Installing dependencies
-        run: npm install
+        run: yarn install
       - name: Run logout workflow tests
-        run: npm run refapp3Logout
+        run: cd packages/cypress && yarn refapp3Logout
       - name: Upload screen recordings of failed tests
         if: ${{ failure() }}
         uses: actions/upload-artifact@v2
         with:
           name: Screen recordings of failed tests
-          path: cypress/videos/refapp-3.x
+          path: packages/cypress/cypress/videos/refapp-3.x
