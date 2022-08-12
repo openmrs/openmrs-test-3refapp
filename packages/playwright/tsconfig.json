@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@core": [
+        "./src/core"
+      ],
+      "@commands": [
+        "./src/commands"
+      ],
+      "@fixtures": [
+        "./src/fixtures"
+      ],
+      "@pages": [
+        "./src/pages"
+      ]
+    }
+  }
+}

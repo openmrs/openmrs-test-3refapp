@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "openmrs-test-3refapp-playwright",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "playwright test --headed --project=chromium",
+    "debug": "npm run test -- --debug"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.24.0",
+    "dotenv": "16.0.1"
+  }
+}
