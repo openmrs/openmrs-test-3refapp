@@ -10,6 +10,7 @@ ___
 [![RefApp 3.x Patient Registration](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-registration.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-registration.yml)
 [![RefApp 3.x Patient Search](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-search.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-search.yml)
 [![RefApp 3.x Logout](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-logout.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-logout.yml)
+[![RefApp 3.x Patient Visit](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-visit.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-visit.yml)
 ___
 
 
