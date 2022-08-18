@@ -3,7 +3,7 @@ import { Given, Before, When } from "cypress-cucumber-preprocessor/steps";
 let identifier = null;
 let patient = null;
 
-Before({ tags: "@vitals-and-triage" }, () => {
+Before({ tags: "@vitals-and-biometrics" }, () => {
   cy.generateIdentifier().then((generatedIdentifier) => {
     identifier = generatedIdentifier;
     cy.createPatient(identifier).then((generatedPatient) => {
@@ -21,29 +21,7 @@ Given("the user arrives on a patient’s summary page", () => {
   cy.visit(`patient/${patient.uuid}/chart`);
 });
 
-When("the user clicks on Edit patient details", () => {
-  cy.contains("Actions").click({ force: true });
-  cy.contains("Edit patient details").click({ force: true });
-});
-
-Then("the edit page should load", () => {
-  cy.contains("Edit Patient");
-});
-
-When("the user updates the address", () => {
-  cy.get("#address1").clear({ force: true }).type("45 baker's street");
-  cy.get("#country").clear({ force: true }).type("Germany");
-  cy.get("#stateProvince").clear({ force: true }).type("Central");
-  cy.get("#cityVillage").clear({ force: true }).type("Kandy");
-  cy.get("#postalCode").clear({ force: true }).type("3000");
-  cy.contains("Update Patient").click({ force: true });
-});
-
-Then("the address should be updated", () => {
-  cy.contains("Update Patient").click({ force: true });
-});
-
-When("the user clicks on Record Vitals", () => {
+When("the user clicks on Record Vitals and Biometrics", () => {
   cy.contains("Record vitals").click({ force: true });
 });
 
@@ -52,7 +30,6 @@ Then("the Vitals form should load", () => {
 });
 
 When("the user adds vitals", () => {
-  // Todo: Use getByLabel instead of ids
   cy.get("#systolic").type("120", { force: true });
   cy.get("#diastolic").type("80", { force: true });
   cy.get("#Pulse").type("80", { force: true });
@@ -65,26 +42,16 @@ When("the user adds vitals", () => {
   cy.get("#MUAC").type("100", { force: true });
 });
 
-When("the user adds abnormal vital signs", () => {
-  cy.get("#systolic").clear({ force: true }).type("140", { force: true });
-  cy.get("#diastolic").clear({ force: true }).type("80", { force: true });
-});
-
-Then("the abnormal vital signs should show up as red", () => {
-  cy.get("#systolic").should("have.css", "color", "rgb(218, 30, 40)");
-  cy.get("#diastolic").should("have.css", "color", "rgb(218, 30, 40)");
-});
-
 When("the user saves the form", () => {
   cy.contains("Save and close").click({ force: true });
   cy.reload();
 });
 
 Then("the vitals needs to be displayed on the Vitals table", () => {
-  cy.contains("Last Recorded").click({ force: true });
+  cy.contains("Vitals & Biometrics").click({ force: true });
   cy.contains("15");
   cy.contains("38");
-  cy.contains("140 / 80");
+  cy.contains("80");
   cy.contains("90");
   cy.contains("160");
   cy.contains("60");

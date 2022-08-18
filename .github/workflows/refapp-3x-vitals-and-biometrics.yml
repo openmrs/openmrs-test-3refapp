@@ -25,8 +25,8 @@ jobs:
           node-version: '16.x'
       - name: Installing dependencies
         run: yarn install
-      - name: Run Vitals and triage workflow tests
-        run: cd packages/cypress && yarn refapp3VitalsAndTriage
+      - name: Run Vitals and Biometrics workflow tests
+        run: cd packages/cypress && yarn refapp3VitalsAndBiometrics
       - name: Upload screen recordings of failed tests
         if: ${{ failure() }}
         uses: actions/upload-artifact@v2
