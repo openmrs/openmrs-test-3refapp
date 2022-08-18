@@ -38,11 +38,10 @@ Then("the Record program enrollment section should display", () => {
 });
 
 When("the user enroll to a program", () => {
-  cy.contains("Choose a program").click({ force: true });
-  cy.wait(1000);
-  cy.contains("HIV Care and Treatment").click({ force: true });
+  cy.contains("Record program enrollment").click({force:true});
+  cy.get('#program').select('HIV Care and Treatment');
   // TODO: Different dates
-  cy.contains("Save and close").click({force:true});
+  cy.get('button[type="submit"]').click();
 });
 
 Then("the visit should end successfully", () => {
