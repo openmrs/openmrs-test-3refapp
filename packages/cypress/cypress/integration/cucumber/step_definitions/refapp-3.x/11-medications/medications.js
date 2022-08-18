@@ -24,9 +24,9 @@ When("the user clicks on Orders tab", () => {
   cy.contains("Orders").click({ force: true });
 });
 
-Then("the empty Orders page should display", () => {
+Then("the empty orders page should display", () => {
+  cy.contains("Your basket is empty");
   cy.contains("There are no active medications to display for this patient");
-  cy.contains("There are no past medications to display for this patient");
 });
 
-//TODO: Place drug orders
+//TODO: Place drug orders (Still on development)

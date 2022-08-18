@@ -7,4 +7,4 @@ Feature: Medications
   @patient-medications
     Scenario: The user should be able view active and past medications
       When the user clicks on Orders tab
-      Then the empty Orders page should display
+      Then the empty orders page should display
