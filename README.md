@@ -18,6 +18,7 @@ ___
 [![RefApp 3.x Appointments](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-appointments.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-appointments.yml)
 [![RefApp 3.x Care Programs](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-care-programs.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-care-programs.yml)
 [![RefApp 3.x Clinical Visit](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-clinical-visit.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-clinical-visit.yml)
+[![RefApp 3.x Medications](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-medications.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-medications.yml)
 ___
 
 
