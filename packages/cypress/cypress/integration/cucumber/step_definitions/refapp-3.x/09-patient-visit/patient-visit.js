@@ -3,7 +3,16 @@ import { Given, Before, When } from "cypress-cucumber-preprocessor/steps";
 let identifier = null;
 let patient = null;
 
-Before({ tags: "@patient-visit" }, () => {
+Before({ tags: "@patient-visit-start" }, () => {
+  cy.generateIdentifier().then((generatedIdentifier) => {
+    identifier = generatedIdentifier;
+    cy.createPatient(identifier).then((generatedPatient) => {
+      patient = generatedPatient;
+    });
+  });
+});
+
+Before({ tags: "@patient-visit-end" }, () => {
   cy.generateIdentifier().then((generatedIdentifier) => {
     identifier = generatedIdentifier;
     cy.createPatient(identifier).then((generatedPatient) => {
@@ -26,18 +35,20 @@ When("the user clicks on Start visit", () => {
   cy.contains("Start visit").click({ force: true });
 });
 
-Then("the start visit page should load", () => {
+Then("the start a visit page should load", () => {
   cy.contains("Start a visit");
 });
 
 When("the user add the details and submit", () => {
   cy.contains("Facility Visit").click({ force: true });
   // Todo: Extend test on other visit types
-  cy.contains("Start visit").click({force:true})
+  cy.wait(1000);
+  // cy.contains("Start visit").click({force:true})
+  cy.get('button[type=submit]').click();
 });
 
 Then("the visit should be started", () => {
-  cy.contains("Visit has been started successfully.");
+  cy.contains("Visit started");
 });
 
 When("the user ends the clinical visit", () => {
@@ -48,5 +59,6 @@ When("the user ends the clinical visit", () => {
 });
 
 Then("the visit should end successfully", () => {
-  cy.contains("Visit has been ended successfully.");
+  cy.contains("Visit ended");
 });
+
