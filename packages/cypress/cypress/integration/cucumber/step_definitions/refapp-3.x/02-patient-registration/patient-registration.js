@@ -57,27 +57,28 @@ When('the user enters {string} details for Andria Faiza', validity => {
         cy.getByLabel('Address Line 1').type(user.address, {force: true});
     }
     if (user.country != null) {
-        cy.getByLabel('Country').clear({force: true}).type(user.country, {force: true});
+        cy.getByLabel('country').clear({force: true}).type(user.country, {force: true});
     }
     if (user.stateProvince != null) {
-        cy.getByLabel('Region').type(user.stateProvince, {force: true});
+        cy.getByLabel('stateProvince').type(user.stateProvince, {force: true});
     }
     if (user.cityVillage != null) {
-        cy.getByLabel('City').type(user.cityVillage, {force: true});
+        cy.getByLabel('cityVillage').type(user.cityVillage, {force: true});
     }
     if (user.postalCode != null) {
-        cy.getByLabel('Post Code').type(user.postalCode, {force: true});
+        cy.getByLabel('postalCode').type(user.postalCode, {force: true});
     }
     if (user.phoneNumber != null) {
         cy.getByLabel('Phone number(optional)').type(user.phone, {force: true});
     }
-    // Click on the first day on the calendar because the calendar doesn't support manual inputs
-    cy.getByLabel('Date of Birth').click({force: true});
-    cy.get('.dayContainer .flatpickr-day').first().click({force: true});
+  // Manually input the date
+  cy.getByLabel('Date of Birth').click({force: true}).type("01/01/2019");
+  // Click on the first day on the calendar because the calendar doesn't support manual inputs
+  // cy.get('.dayContainer .flatpickr-day').first().click({force: true});
 })
 
 When('the user clicks on the create patient button', () => {
-    cy.contains('Create Patient').click({force: true})
+    cy.contains('Register Patient').click({force: true})
 })
 
 Then('the patient registration should be {string}', status => {
