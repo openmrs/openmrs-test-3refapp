@@ -71,10 +71,9 @@ When('the user enters {string} details for Andria Faiza', validity => {
     if (user.phoneNumber != null) {
         cy.getByLabel('Phone number(optional)').type(user.phone, {force: true});
     }
-  // Manually input the date
-  cy.getByLabel('Date of Birth').click({force: true}).type("01/01/2019");
-  // Click on the first day on the calendar because the calendar doesn't support manual inputs
-  // cy.get('.dayContainer .flatpickr-day').first().click({force: true});
+    // Click on the first day on the calendar because the calendar doesn't support manual inputs
+    cy.getByLabel('Date of Birth').click({force: true});
+    cy.get('.dayContainer .flatpickr-day').first().click({force: true});
 })
 
 When('the user clicks on the create patient button', () => {
