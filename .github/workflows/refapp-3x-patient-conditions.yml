@@ -1,4 +1,4 @@
-name: RefApp 3.x Logout
+name: RefApp 3.x Patient Conditions
 on:
   schedule:
     - cron: "0 0 * * *"
@@ -27,8 +27,8 @@ jobs:
           node-version: '16.x'
       - name: Installing dependencies
         run: yarn install
-      - name: Run logout workflow tests
-        run: cd packages/cypress && yarn refapp3Logout
+      - name: Run patient conditions workflow tests
+        run: cd packages/cypress && yarn refapp3PatientConditions
       - name: Upload screen recordings of failed tests
         if: ${{ failure() }}
         uses: actions/upload-artifact@v2
