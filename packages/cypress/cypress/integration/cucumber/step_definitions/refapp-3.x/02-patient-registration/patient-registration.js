@@ -36,7 +36,7 @@ When('the user enters {string} details for Andria Faiza', validity => {
             phone: null
         }
     };
-    // Chek for a valid validity parameter
+    // Check for a valid validity parameter
     if (!details.hasOwnProperty(validity)) {
         throw new Error(`Validity '${validity}' is not supported`);
     }
