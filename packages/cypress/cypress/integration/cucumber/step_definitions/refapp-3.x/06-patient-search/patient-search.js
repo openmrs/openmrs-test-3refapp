@@ -23,10 +23,8 @@ When('the user search for {string}', patientName => {
 
 Then('the result should be {string}', result => {
     cy.contains(result);
-    
 });
 
 after({tags: '@patient-involved'}, () => {
     cy.deletePatient(patient_uuid);
 });
-
