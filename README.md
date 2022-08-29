@@ -7,10 +7,11 @@ ___
 |---------------------------|
 [3.x Demo Build](https://ci.openmrs.org/browse/REFAPP-D3X) ![Build Status](https://ci.openmrs.org/plugins/servlet/wittified/build-status/REFAPP-D3X)
 [![RefApp 3.x Login](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-login.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-login.yml)
+[![RefApp 3.x Logout](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-logout.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-logout.yml)
 [![RefApp 3.x Patient Registration](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-registration.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-registration.yml)
 [![RefApp 3.x Patient Search](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-search.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-search.yml)
-[![RefApp 3.x Logout](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-logout.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-logout.yml)
 [![RefApp 3.x Patient Conditions](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-conditions.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-conditions.yml)
+[![RefApp 3.x Form Management](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-form-management.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-form-management.yml)
 ___
 
 
