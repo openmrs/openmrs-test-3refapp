@@ -27,7 +27,7 @@ Then('the user should be {string} to login', (ability) => {
             cy.url().should('include', '/home');
             break;
         case "unable":
-            cy.contains("invalidCredentials");
+            cy.contains("Invalid username or password");
             break;
         default:
             throw new Error(`Ability '${ability}' is not supported`);
