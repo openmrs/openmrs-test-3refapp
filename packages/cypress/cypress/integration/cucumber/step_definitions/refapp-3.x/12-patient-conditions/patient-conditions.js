@@ -1,9 +1,9 @@
-import { Given, Before, When } from "cypress-cucumber-preprocessor/steps";
+import { Given } from "cypress-cucumber-preprocessor/steps";
 
 let identifier = null;
 let patient = null;
 
-Before({ tags: "@patient-conditions" }, () => {
+before({ tags: "@patient-conditions" }, () => {
   cy.generateIdentifier().then((generatedIdentifier) => {
     identifier = generatedIdentifier;
     cy.createPatient(identifier).then((generatedPatient) => {
