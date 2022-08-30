@@ -5,6 +5,6 @@ Feature: User Logout
     And the user arrives on a patient’s summary page
 
   @form-management
-  Scenario: form entry widget loads & displays all expected forms
+  Scenario: Users should be able to manage the submitted forms and add forms
     When the user clicks on Forms & Notes tab
-    Then form entry widget loads & displays all expected forms
+    Then the empty form table should displayed
