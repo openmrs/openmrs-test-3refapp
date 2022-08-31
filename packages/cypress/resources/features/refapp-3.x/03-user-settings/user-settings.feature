@@ -7,6 +7,7 @@ Feature: User Settings
   @locale
   Scenario: The user should be able to change the locale
     When the user change the locale to Spanish
+    And user clicks on patient search option
     Then the text should change into spanish
 
   @user-settings

@@ -1,6 +1,9 @@
 import {Given, After} from 'cypress-cucumber-preprocessor/steps';
 
 Given('the user is logged in', () => {
+  cy.on('uncaught:exception', (err, runnable) => {
+    return false;
+  });
     cy.login();
     cy.visit('home');
 })
@@ -10,8 +13,12 @@ When('the user change the locale to Spanish', () => {
     cy.getByLabel('Select locale').select('es', {force: true});
 });
 
+And("user clicks on patient search option", () => {
+  cy.get('button[name="Users"]').click();
+  cy.get('button[name=SearchPatientIcon]').click();
+});
+
 Then('the text should change into spanish', () => {
-  cy.get('button[name=SearchPatientIcon]').click({force: true});
   cy.getByPlaceholder('Buscar un paciente');
 });
 
