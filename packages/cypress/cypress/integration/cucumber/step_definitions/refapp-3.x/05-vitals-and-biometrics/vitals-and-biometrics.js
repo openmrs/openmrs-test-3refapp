@@ -22,7 +22,8 @@ Given("the user arrives on a patient’s summary page", () => {
 });
 
 When("the user clicks on Record Vitals and Biometrics", () => {
-  cy.contains("Record vitals").click({ force: true });
+  cy.contains("Vitals & Biometrics").click({ force: true });
+  cy.contains("Add").click({force:true});
 });
 
 Then("the Vitals form should load", () => {
