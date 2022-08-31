@@ -1,4 +1,4 @@
-Feature: Vitals and Triage
+Feature: Vitals and Biometrics
 
   Background:
     Given the user is logged in
