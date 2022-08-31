@@ -17,6 +17,18 @@ and run the scripts inside the
 ```sh
 # Given that you start in the repository's root:
 cd packages/playwright
+```
+```sh
+# Run all playwright tests:
+yarn test
+```
+By default, the test suite will run against the https://dev3.openmrs.org server.
+You can override this by exporting `UI_BASE_URL` and `WS_BASE_URL` environment variables beforehand:
+
+```sh
+# Set the server URL to localhost:
+export UI_BASE_URL=http://localhost/openmrs/spa/
+export WS_BASE_URL=http://localhost/openmrs/ws/
 
 # Run all playwright tests:
 yarn test
@@ -61,3 +73,10 @@ This is very much underdeveloped/WIP. At the moment, there exists a (git-shared)
 file which can be used for configuring certain test attributes. This is most likely
 about to change in the future when the test suite is supposed to be used in, e.g.,
 GitHub Actions pipelines. Stay tuned for updates!
+
+## Troubleshooting tips
+
+On MacOS, you might run into the following error:
+```browserType.launch: Executable doesn't exist at /Users/<user>/Library/Caches/ms-playwright/chromium-1015/chrome-mac/Chromium.app/Contents/MacOS/Chromium```
+In order to fix this, you can attempt to force the browser reinstallation by running:
+```PLAYWRIGHT_BROWSERS_PATH=/Users/$USER/Library/Caches/ms-playwright npx playwright install```
