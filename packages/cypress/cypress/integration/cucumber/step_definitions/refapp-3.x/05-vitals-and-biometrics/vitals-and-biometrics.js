@@ -23,7 +23,7 @@ Given("the user arrives on a patient’s summary page", () => {
 
 When("the user clicks on Record Vitals and Biometrics", () => {
   cy.contains("Vitals & Biometrics").click({ force: true });
-  cy.contains("Add").click({force:true});
+  cy.contains("Record biometrics").click({force:true});
 });
 
 Then("the Vitals form should load", () => {
@@ -50,10 +50,6 @@ When("the user saves the form", () => {
 
 Then("the vitals needs to be displayed on the Vitals table", () => {
   cy.contains("Vitals & Biometrics").click({ force: true });
-  cy.contains("15");
-  cy.contains("38");
-  cy.contains("80");
-  cy.contains("90");
   cy.contains("160");
   cy.contains("60");
   cy.contains("23.4");
