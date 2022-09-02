@@ -11,7 +11,7 @@
     "refapp3PatientSearch": "cypress run --spec resources/features/refapp-3.x/06-patient-search/patient-search.feature",
     "refapp3UserSettings": "cypress run --spec resources/features/refapp-3.x/03-user-settings/user-settings.feature",
     "refapp3ClinicalVisit": "cypress run --spec resources/features/refapp-3.x/04-clinical-visit/clinical-visit.feature",
-    "refapp3VitalsAndTriage": "cypress run --spec resources/features/refapp-3.x/05-vitals-and-triage/vitals-and-triage.feature",
+    "refapp3VitalsAndBiometrics": "cypress run --spec resources/features/refapp-3.x/05-vitals-and-biometrics/vitals-and-biometrics.feature",
     "refapp3FormManagement": "cypress run --spec resources/features/refapp-3.x/08-form-management/form-management.feature",
     "refapp3PatientConditions": "cypress run --spec resources/features/refapp-3.x/12-patient-conditions/patient-conditions.feature",
     "refapp3PatientAllergies": "cypress run --spec resources/features/refapp-3.x/13-patient-allergies/patient-allergies.feature"
