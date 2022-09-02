@@ -28,8 +28,8 @@ Then("the empty upcoming appointment table should displayed", () => {
   cy.contains("There are no upcoming appointments to display for this patient");
 });
 
-When("There are no upcoming appointments to display for this patient", () => {
-  cy.contains("Past").click({force:true});
+When("the user clicks on past appointments section", () => {
+  cy.contains("Past").click();
 });
 
 Then("the empty past appointment table should displayed", () => {

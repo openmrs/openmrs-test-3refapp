@@ -8,7 +8,7 @@ Feature: Appointments
     Scenario: The users should be able to make an appointment
       When a user clicks on Appointments tab
       Then the empty upcoming appointment table should displayed
-      When a user clicks on past appointments section
+      When the user clicks on past appointments section
       Then the empty past appointment table should displayed
 #  ToDo: Requests an appointment
 #      When a user requests an appointment
