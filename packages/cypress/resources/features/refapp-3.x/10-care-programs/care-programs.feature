@@ -1,4 +1,4 @@
-Feature: Vitals and Triage
+Feature: Care programs
 
   Background:
     Given the user is logged in

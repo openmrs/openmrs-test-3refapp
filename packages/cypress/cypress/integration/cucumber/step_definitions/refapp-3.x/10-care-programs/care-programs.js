@@ -44,6 +44,6 @@ When("the user enroll to a program", () => {
   cy.get('button[type="submit"]').click();
 });
 
-Then("the visit should end successfully", () => {
+Then("the patient should enrolled to the program", () => {
   cy.contains("Program enrollment saved");
 });
