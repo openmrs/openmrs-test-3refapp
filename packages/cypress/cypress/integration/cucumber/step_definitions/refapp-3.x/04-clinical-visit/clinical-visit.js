@@ -6,7 +6,6 @@ before({tags: '@clinical-visit'}, () => {
     cy.createPatient().then((generatedPatient) => {
         patient = generatedPatient;
         cy.startFacilityVisit(patient.uuid);
-        cy.generateLabResults(patient.uuid);
     });
 });
 
