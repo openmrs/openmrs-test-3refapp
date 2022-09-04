@@ -24,8 +24,8 @@ When("the user clicks on Forms & Notes tab", () => {
   cy.contains("Forms & Notes").click({force: true});
 });
 
-Then('the empty form table should displayed', () => {
-    cy.contains("There are no Forms to display for this patient");
+Then('the form table should displayed', () => {
+    cy.contains("Test Form 1");
 });
 
 //TODO: Form management section is still under development.
