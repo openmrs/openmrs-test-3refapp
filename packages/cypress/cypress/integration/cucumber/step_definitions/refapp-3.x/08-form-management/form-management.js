@@ -26,6 +26,7 @@ When("the user clicks on Forms & Notes tab", () => {
 
 Then('the empty form table should displayed', () => {
     cy.contains("There are no Forms to display for this patient");
-    //TODO: Form management section is still under development.
-    //TODO: Form management test should be expand after the developments are over
 });
+
+//TODO: Form management section is still under development.
+//TODO: Form management test should be expand after the developments are over
