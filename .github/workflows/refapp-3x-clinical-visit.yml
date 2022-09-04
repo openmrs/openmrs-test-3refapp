@@ -27,7 +27,7 @@ jobs:
           node-version: '16.x'
       - name: Installing dependencies
         run: yarn install
-      - name: Run patient conditions workflow tests
+      - name: Run clinical visit workflow tests
         run: cd packages/cypress && yarn refapp3ClinicalVisit
       - name: Upload screen recordings of failed tests
         if: ${{ failure() }}
