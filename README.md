@@ -9,12 +9,13 @@ ___
 [![RefApp 3.x Login](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-login.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-login.yml)
 [![RefApp 3.x Logout](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-logout.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-logout.yml)
 [![RefApp 3.x Patient Registration](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-registration.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-registration.yml)
-[![RefApp 3.x Vitals and Biometrics](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-vitals-and-triage.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-vitals-and-triage.yml)
+[![RefApp 3.x Vitals and Biometrics](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-vitals-and-biometrics.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-vitals-and-biometrics.yml)
 [![RefApp 3.x User settings](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-user-settings.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-user-settings.yml)
 [![RefApp 3.x Patient Search](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-search.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-search.yml)
 [![RefApp 3.x Patient Conditions](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-conditions.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-conditions.yml)
 [![RefApp 3.x Form Management](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-form-management.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-form-management.yml)
 [![RefApp 3.x Patient allergies](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-allergies.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-allergies.yml)
+[![RefApp 3.x Appointments](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-appointments.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-appointments.yml)
 ___
 
 

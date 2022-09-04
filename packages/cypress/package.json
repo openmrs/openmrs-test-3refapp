@@ -14,7 +14,8 @@
     "refapp3VitalsAndBiometrics": "cypress run --spec resources/features/refapp-3.x/05-vitals-and-biometrics/vitals-and-biometrics.feature",
     "refapp3FormManagement": "cypress run --spec resources/features/refapp-3.x/08-form-management/form-management.feature",
     "refapp3PatientConditions": "cypress run --spec resources/features/refapp-3.x/12-patient-conditions/patient-conditions.feature",
-    "refapp3PatientAllergies": "cypress run --spec resources/features/refapp-3.x/13-patient-allergies/patient-allergies.feature"
+    "refapp3PatientAllergies": "cypress run --spec resources/features/refapp-3.x/13-patient-allergies/patient-allergies.feature",
+    "refapp3Appointments": "cypress run --spec resources/features/refapp-3.x/14-appointments/appointments.feature"
   },
   "devDependencies": {
     "@testing-library/cypress": "^8.0.0",
