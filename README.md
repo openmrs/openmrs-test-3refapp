@@ -16,6 +16,7 @@ ___
 [![RefApp 3.x Form Management](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-form-management.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-form-management.yml)
 [![RefApp 3.x Patient allergies](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-allergies.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-patient-allergies.yml)
 [![RefApp 3.x Appointments](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-appointments.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-appointments.yml)
+[![RefApp 3.x Care Programs](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-care-programs.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-care-programs.yml)
 [![RefApp 3.x Clinical Visit](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-clinical-visit.yml/badge.svg)](https://github.com/openmrs/openmrs-test-3refapp/actions/workflows/refapp-3x-clinical-visit.yml)
 ___
 
@@ -81,7 +82,7 @@ Follow this steps for setting up the local instance
 
 ## Creating a GitHub workflow
 1. Create a new GitHub workflow file under `.github/workflows/` directory. An example workflow can be found [here](https://github.com/openmrs/openmrs-contrib-qaframework/blob/master/.github/workflows/refapp-3x-login.yml).
-2. Add the workflow badge to the readme file under [3.x RefApp](https://github.com/openmrs/openmrs-contrib-qaframework/blob/master/README.md#3x-refapp) section. It should take the following format:
+2. Add the workflow badge to the readme file under [3.x RefApp](https://github.com/openmrs/openmrs-test-3refapp/blob/main/README.md#qa-dashboard-for-refapp-3x-project-status) section. It should take the following format:
     ```markdown
     [![<workflow name>](<link-to-the-workflow>/badge.svg)](<link-to-the-workflow>)
     ```
