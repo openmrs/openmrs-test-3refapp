@@ -7,4 +7,4 @@ Feature: User Logout
   @form-management
   Scenario: Users should be able to manage the submitted forms and add forms
     When the user clicks on Forms & Notes tab
-    Then the empty form table should displayed
+    Then the form table should displayed
