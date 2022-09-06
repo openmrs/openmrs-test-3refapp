@@ -2,7 +2,7 @@ const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
   video: true,
-  defaultCommandTimeout: 150000,
+  defaultCommandTimeout: 20000,
   env: {
     API_BASE_URL: 'http://localhost/openmrs/ws/rest/v1',
     ADMIN_USERNAME: 'admin',
