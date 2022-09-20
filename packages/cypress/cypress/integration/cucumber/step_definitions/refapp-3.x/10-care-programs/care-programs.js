@@ -1,25 +1,4 @@
-import { Given, Before, When } from "cypress-cucumber-preprocessor/steps";
-
-let identifier = null;
-let patient = null;
-
-Before({ tags: "@care-programs" }, () => {
-  cy.generateIdentifier().then((generatedIdentifier) => {
-    identifier = generatedIdentifier;
-    cy.createPatient(identifier).then((generatedPatient) => {
-      patient = generatedPatient;
-      cy.startFacilityVisit(patient.uuid);
-    });
-  });
-});
-
-Given("the user is logged in", () => {
-  cy.login();
-});
-
-Given("the user arrives on a patient’s summary page", () => {
-  cy.visit(`patient/${patient.uuid}/chart`);
-});
+import { Then, When} from '@badeball/cypress-cucumber-preprocessor';
 
 When("the user clicks on Programs tab", () => {
   cy.contains("Programs").click({ force: true });

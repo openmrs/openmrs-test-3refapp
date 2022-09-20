@@ -1,8 +1,8 @@
 Feature: Appointments
 
   Background:
-    Given the user is logged in
-    And the user arrives on a patient’s summary page
+    Given the user login to the Outpatient Clinic
+    And the user arrives on a patient’s chart page
 
   @appointments
     Scenario: The users should be able to make an appointment

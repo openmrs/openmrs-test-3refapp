@@ -1,12 +1,4 @@
-import {Given, After} from 'cypress-cucumber-preprocessor/steps';
-
-Given('the user is logged in', () => {
-  cy.on('uncaught:exception', (err, runnable) => {
-    return false;
-  });
-    cy.login();
-    cy.visit('home');
-})
+import {After, And, Then, When} from '@badeball/cypress-cucumber-preprocessor';
 
 When('the user change the locale to Spanish', () => {
     cy.get('button[name="Users"]').click({force: true});

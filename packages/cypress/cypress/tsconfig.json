@@ -3,9 +3,9 @@
   "compilerOptions": {
     "strict": true,
     "baseUrl": "../node_modules",
-    "target": "es5",
+    "target": "ES6",
     "lib": [
-      "es5",
+      "ES6",
       "dom"
     ],
     "types": [

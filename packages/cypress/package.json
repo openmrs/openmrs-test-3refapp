@@ -19,13 +19,21 @@
     "refapp3CarePrograms": "cypress run --spec resources/features/refapp-3.x/10-care-programs/care-programs.feature"
   },
   "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^12.2.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.3",
     "@testing-library/cypress": "^8.0.0",
     "@types/uuid": "3.4.7",
     "cypress": "^10.4.0",
-    "cypress-cucumber-preprocessor": "^4.0.1",
-    "cypress-file-upload": "^5.0.8"
+    "cypress-file-upload": "^5.0.8",
+    "esbuild": "^0.15.7"
   },
   "cypress-cucumber-preprocessor": {
-    "step_definitions": "cypress/integration/cucumber/step_definitions"
+    "stepDefinitions": [
+      "cypress/integration/cucumber/step_definitions/**/**/*.js",
+      "cypress/integration/common/**/*.js"
+    ]
+  },
+  "dependencies": {
+    "@esbuild-plugins/node-modules-polyfill": "^0.1.4"
   }
 }

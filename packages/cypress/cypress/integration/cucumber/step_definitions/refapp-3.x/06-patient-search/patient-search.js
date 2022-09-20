@@ -1,17 +1,4 @@
-import {Given} from 'cypress-cucumber-preprocessor/steps';
-
-let patient_uuid = null;
-
-before({tags: '@patient-involved'}, () => {
-    cy.createPatient().then((user) => {
-        patient_uuid = user.uuid;
-    });
-})
-
-Given('the user login to the Outpatient Clinic', () => {
-    cy.login();
-    cy.visit('home');
-})
+import {Then, When} from '@badeball/cypress-cucumber-preprocessor';
 
 When('the user search for {string}', patientName => {
     cy.get('button[name=SearchPatientIcon]').click();
@@ -23,8 +10,4 @@ When('the user search for {string}', patientName => {
 
 Then('the result should be {string}', result => {
     cy.contains(result);
-});
-
-after({tags: '@patient-involved'}, () => {
-    cy.deletePatient(patient_uuid);
 });

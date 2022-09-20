@@ -1,7 +1,7 @@
 Feature: Clinical Visit
 
   Background:
-    Given the user is logged in
+    Given the user login to the Outpatient Clinic
     And the user arrives on a patient’s chart page
 
   @clinical-visit

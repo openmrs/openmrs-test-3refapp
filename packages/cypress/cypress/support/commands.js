@@ -1,4 +1,4 @@
-import uuid from 'uuid';
+import {v4 as uuid} from 'uuid';
 import 'cypress-file-upload';
 
 const API_BASE_URL = Cypress.env('API_BASE_URL');

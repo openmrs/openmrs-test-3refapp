@@ -1,9 +1,4 @@
-import {Given} from 'cypress-cucumber-preprocessor/steps';
-
-Given('the user login to the Outpatient Clinic', () => {
-    cy.login();
-    cy.visit('home');
-})
+import {Then, When} from '@badeball/cypress-cucumber-preprocessor';
 
 When('the user clicks on the add patient icon', () => {
     cy.get('button[name=AddPatientIcon]').click();
