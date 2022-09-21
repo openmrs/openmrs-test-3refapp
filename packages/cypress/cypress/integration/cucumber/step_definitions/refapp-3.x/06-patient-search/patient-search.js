@@ -1,4 +1,12 @@
-import {Then, When} from '@badeball/cypress-cucumber-preprocessor';
+import {Before, Then, When, After} from '@badeball/cypress-cucumber-preprocessor';
+
+let patient = null;
+
+Before({tags: '@patient-search' }, () => {
+  cy.createPatient().then((generatedPatient) => {
+    patient = generatedPatient;
+  });
+});
 
 When('the user search for {string}', patientName => {
     cy.get('button[name=SearchPatientIcon]').click();
@@ -10,4 +18,8 @@ When('the user search for {string}', patientName => {
 
 Then('the result should be {string}', result => {
     cy.contains(result);
+});
+
+After({tags: '@patient-search'}, () => {
+    cy.deletePatient(patient.uuid);
 });

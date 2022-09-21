@@ -1,4 +1,12 @@
-import { Then, When} from '@badeball/cypress-cucumber-preprocessor';
+import { Before, Then, When, After } from '@badeball/cypress-cucumber-preprocessor';
+
+let patient = null;
+
+Before({tags: '@patient-conditions' }, () => {
+  cy.createPatient().then((generatedPatient) => {
+    patient = generatedPatient;
+  });
+});
 
 When("the user clicks on Conditions tab", () => {
   cy.contains("Conditions").click({ force: true });
@@ -17,4 +25,8 @@ When("the user record a condition", () => {
 
 Then("the condition should record successfully", () => {
   cy.contains("Condition saved");
+});
+
+After({tags: '@patient-conditions'}, () => {
+  cy.deletePatient(patient.uuid);
 });

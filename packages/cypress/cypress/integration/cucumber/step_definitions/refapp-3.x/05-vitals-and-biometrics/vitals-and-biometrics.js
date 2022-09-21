@@ -1,4 +1,12 @@
-import { Then, When} from '@badeball/cypress-cucumber-preprocessor';
+import { Before, Then, When, After } from '@badeball/cypress-cucumber-preprocessor';
+
+let patient = null;
+
+Before({tags: '@vitals-and-biometrics' }, () => {
+  cy.createPatient().then((generatedPatient) => {
+    patient = generatedPatient;
+  });
+});
 
 When("the user clicks on Record Vitals and Biometrics", () => {
   cy.contains("Vitals & Biometrics").click({ force: true });
@@ -32,4 +40,8 @@ Then("the vitals needs to be displayed on the Vitals table", () => {
   cy.contains("160");
   cy.contains("60");
   cy.contains("23.4");
+});
+
+After({tags: '@vitals-and-biometrics'}, () => {
+  cy.deletePatient(patient.uuid);
 });
