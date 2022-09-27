@@ -1,8 +1,8 @@
 Feature: Patient Conditions
 
   Background:
-    Given the user is logged in
-    And the user arrives on a patient’s summary page
+    Given the user login to the Outpatient Clinic
+    And the user arrives on a patient’s chart page
 
   @patient-conditions
     Scenario: The user should be able to record patient conditions

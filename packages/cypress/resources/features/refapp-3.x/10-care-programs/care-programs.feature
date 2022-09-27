@@ -1,8 +1,8 @@
 Feature: Care programs
 
   Background:
-    Given the user is logged in
-    And the user arrives on a patient’s summary page
+    Given the user login to the Outpatient Clinic
+    And the user arrives on a patient’s chart page
 
   @care-programs
     Scenario: The user add a care program and enroll patient

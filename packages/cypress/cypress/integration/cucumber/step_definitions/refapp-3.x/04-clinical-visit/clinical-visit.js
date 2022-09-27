@@ -1,24 +1,12 @@
-import {Given, When} from 'cypress-cucumber-preprocessor/steps';
+import {Before, After, And, Then, When} from '@badeball/cypress-cucumber-preprocessor';
 
 let patient = null;
 
-before({tags: '@clinical-visit'}, () => {
+Before({tags: '@clinical-visit'}, () => {
     cy.createPatient().then((generatedPatient) => {
         patient = generatedPatient;
         cy.startFacilityVisit(patient.uuid);
     });
-});
-
-Given('the user is logged in', () => {    
-    cy.on('uncaught:exception', (err, runnable) => {
-    	console.log(err);
-    	return false;
-    });
-    cy.login();
-})
-
-Given('the user arrives on a patient’s chart page', () => {
-    cy.visit(`patient/${patient.uuid}/chart`);
 });
 
 Then('the Patient header should display correct information', () => {
@@ -95,6 +83,6 @@ And('the user selects Edit', () => {
     })
 });
 
-after({tags: '@clinical-visit'}, () => {
+After({tags: '@clinical-visit'}, () => {
     cy.deletePatient(patient.uuid);
 });

@@ -1,8 +1,8 @@
 Feature: Patient Allergies
 
   Background:
-    Given the user is logged in
-    And the user arrives on a patient’s summary page
+    Given the user login to the Outpatient Clinic
+    And the user arrives on a patient’s chart page
 
   @patient-allergies
     Scenario: Users are able to view all recorded allergies and record a new allergy

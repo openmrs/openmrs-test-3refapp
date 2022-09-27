@@ -2,7 +2,7 @@ Feature: User Logout
 
   Background:
     Given the user login to the Outpatient Clinic
-    And the user arrives on a patient’s summary page
+    And the user arrives on a patient’s chart page
 
   @form-management
   Scenario: Users should be able to manage the submitted forms and add forms

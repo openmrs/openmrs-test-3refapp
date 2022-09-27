@@ -1,8 +1,8 @@
 Feature: Vitals and Biometrics
 
   Background:
-    Given the user is logged in
-    And the user arrives on a patient’s summary page
+    Given the user login to the Outpatient Clinic
+    And the user arrives on a patient’s chart page
 
   @vitals-and-biometrics
     Scenario: The user should be able to record vitals and biometrics

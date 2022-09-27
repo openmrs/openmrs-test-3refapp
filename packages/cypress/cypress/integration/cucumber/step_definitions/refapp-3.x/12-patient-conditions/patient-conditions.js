@@ -1,23 +1,11 @@
-import { Given } from "cypress-cucumber-preprocessor/steps";
+import { Before, Then, When, After } from '@badeball/cypress-cucumber-preprocessor';
 
-let identifier = null;
 let patient = null;
 
-before({ tags: "@patient-conditions" }, () => {
-  cy.generateIdentifier().then((generatedIdentifier) => {
-    identifier = generatedIdentifier;
-    cy.createPatient(identifier).then((generatedPatient) => {
-      patient = generatedPatient;
-    });
+Before({tags: '@patient-conditions' }, () => {
+  cy.createPatient().then((generatedPatient) => {
+    patient = generatedPatient;
   });
-});
-
-Given("the user is logged in", () => {
-  cy.login();
-});
-
-Given("the user arrives on a patient’s summary page", () => {
-  cy.visit(`patient/${patient.uuid}/chart`);
 });
 
 When("the user clicks on Conditions tab", () => {
@@ -37,4 +25,8 @@ When("the user record a condition", () => {
 
 Then("the condition should record successfully", () => {
   cy.contains("Condition saved");
+});
+
+After({tags: '@patient-conditions'}, () => {
+  cy.deletePatient(patient.uuid);
 });

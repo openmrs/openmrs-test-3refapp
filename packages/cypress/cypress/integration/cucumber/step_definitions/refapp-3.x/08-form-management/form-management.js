@@ -1,23 +1,11 @@
-import {Given} from 'cypress-cucumber-preprocessor/steps';
+import { Before, Then, When, After } from '@badeball/cypress-cucumber-preprocessor';
 
-let identifier = null;
 let patient = null;
 
-before({ tags: "@form-management" }, () => {
-  cy.generateIdentifier().then((generatedIdentifier) => {
-    identifier = generatedIdentifier;
-    cy.createPatient(identifier).then((generatedPatient) => {
-      patient = generatedPatient;
-    });
+Before({tags: '@form-management' }, () => {
+  cy.createPatient().then((generatedPatient) => {
+    patient = generatedPatient;
   });
-});
-
-Given("the user login to the Outpatient Clinic", () => {
-  cy.login();
-});
-
-Given("the user arrives on a patient’s summary page", () => {
-  cy.visit(`patient/${patient.uuid}/chart`);
 });
 
 When("the user clicks on Forms & Notes tab", () => {
@@ -26,6 +14,10 @@ When("the user clicks on Forms & Notes tab", () => {
 
 Then('the form table should displayed', () => {
     cy.contains("Test Form 1");
+});
+
+After({tags: '@form-management'}, () => {
+  cy.deletePatient(patient.uuid);
 });
 
 //TODO: Form management section is still under development.

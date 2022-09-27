@@ -1,24 +1,11 @@
-import { Given } from "cypress-cucumber-preprocessor/steps";
+import { Before, Then, When, After } from '@badeball/cypress-cucumber-preprocessor';
 
-let identifier = null;
 let patient = null;
 
-before({ tags: "@vitals-and-biometrics" }, () => {
-  cy.generateIdentifier().then((generatedIdentifier) => {
-    identifier = generatedIdentifier;
-    cy.createPatient(identifier).then((generatedPatient) => {
-      patient = generatedPatient;
-      cy.startFacilityVisit(patient.uuid);
-    });
+Before({tags: '@vitals-and-biometrics' }, () => {
+  cy.createPatient().then((generatedPatient) => {
+    patient = generatedPatient;
   });
-});
-
-Given("the user is logged in", () => {
-  cy.login();
-});
-
-Given("the user arrives on a patient’s summary page", () => {
-  cy.visit(`patient/${patient.uuid}/chart`);
 });
 
 When("the user clicks on Record Vitals and Biometrics", () => {
@@ -53,4 +40,8 @@ Then("the vitals needs to be displayed on the Vitals table", () => {
   cy.contains("160");
   cy.contains("60");
   cy.contains("23.4");
+});
+
+After({tags: '@vitals-and-biometrics'}, () => {
+  cy.deletePatient(patient.uuid);
 });
