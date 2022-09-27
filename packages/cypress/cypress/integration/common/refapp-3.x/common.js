@@ -9,5 +9,7 @@ Given('the user login to the Outpatient Clinic', () => {
   })
   
 And('the user arrives on a patient’s chart page', () => {
-    cy.visit(`patient/${patient.uuid}/chart`);
+    cy.get('button[name=SearchPatientIcon]').click();
+    cy.getByPlaceholder('Search for a patient by name or identifier number').type('John Doe')
+    cy.contains('John Doe').first().click({force: true});
 });
