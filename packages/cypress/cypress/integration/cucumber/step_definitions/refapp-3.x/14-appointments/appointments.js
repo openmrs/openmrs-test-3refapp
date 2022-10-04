@@ -9,7 +9,7 @@ Before({tags: '@appointments' }, () => {
 });
 
 When("a user clicks on Appointments tab", () => {
-  cy.contains("Appointments").click({ force: true });
+  cy.get('div[data-extension-slot-name="patient-chart-dashboard-slot"]').contains('Appointments').click({ force: true });
 });
 
 Then("the empty upcoming appointment table should displayed", () => {
