@@ -4,7 +4,7 @@
   "name": "openmrs-test-3refapp-cypress",
   "version": "0.1.0",
   "scripts": {
-    "refappCypress": "./node_modules/.bin/cypress-tags run -eTAGS='@cypress and not @microfrontend'",
+    "refappCypress": "cypress run --spec 'resources/features/refapp-3.x/**/*.feature'",
     "refapp3Login": "cypress run --spec resources/features/refapp-3.x/01-login/login.feature",
     "refapp3Logout": "cypress run --spec resources/features/refapp-3.x/07-logout/logout.feature",
     "refapp3PatientRegistration": "cypress run --spec resources/features/refapp-3.x/02-patient-registration/patient-registration.feature",
