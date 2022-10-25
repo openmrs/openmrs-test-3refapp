@@ -4,7 +4,11 @@
   "name": "openmrs-test-3refapp-cypress",
   "version": "0.1.0",
   "scripts": {
-    "refappCypress": "cypress run --spec 'resources/features/refapp-3.x/**/*.feature'",
+    "delete:reports": "rm cypress/results/* || true",
+    "combine:reports": "jrm cypress/results/combined-report.xml \"cypress/results/*.xml\"",
+    "prerefappCypress": "npm run delete:reports",
+    "refappCypress": "cypress run --spec 'resources/features/refapp-3.x/**/*.feature' --reporter junit --reporter-options mochaFile='cypress/results/test-[hash].xml',outputs=true || true",
+    "postrefappCypress": "npm run combine:reports",
     "refapp3Login": "cypress run --spec resources/features/refapp-3.x/01-login/login.feature",
     "refapp3Logout": "cypress run --spec resources/features/refapp-3.x/07-logout/logout.feature",
     "refapp3PatientRegistration": "cypress run --spec resources/features/refapp-3.x/02-patient-registration/patient-registration.feature",
@@ -25,7 +29,10 @@
     "@types/uuid": "3.4.7",
     "cypress": "^10.4.0",
     "cypress-file-upload": "^5.0.8",
-    "esbuild": "^0.15.7"
+    "esbuild": "^0.15.7",
+    "junit-report-merger": "^4.0.0",
+    "mocha": "^10.1.0",
+    "mocha-junit-reporter": "^2.1.0"
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": [
