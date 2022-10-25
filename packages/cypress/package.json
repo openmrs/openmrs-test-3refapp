@@ -28,7 +28,10 @@
     "@types/uuid": "3.4.7",
     "cypress": "^10.4.0",
     "cypress-file-upload": "^5.0.8",
-    "esbuild": "^0.15.7"
+    "esbuild": "^0.15.7",
+    "junit-report-merger": "^4.0.0",
+    "mocha": "^10.1.0",
+    "mocha-junit-reporter": "^2.1.0"
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": [
