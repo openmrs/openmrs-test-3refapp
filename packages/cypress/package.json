@@ -29,6 +29,7 @@
     "cypress": "^10.4.0",
     "cypress-file-upload": "^5.0.8",
     "esbuild": "^0.15.7",
+    "junit-report-merger": "^4.0.0",
     "npm-run-all2": "^6.0.2"
   },
   "cypress-cucumber-preprocessor": {
