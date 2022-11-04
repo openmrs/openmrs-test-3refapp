@@ -51,7 +51,7 @@ Cypress.Commands.add('login', () => {
         url: `${API_BASE_URL}/session`,
         body: {
           sessionLocation: DEFAULT_LOCATION_UUID,
-          locale: "en_GB",
+          locale: "en",
         },
         headers: {
             'Content-Type': 'application/json',
