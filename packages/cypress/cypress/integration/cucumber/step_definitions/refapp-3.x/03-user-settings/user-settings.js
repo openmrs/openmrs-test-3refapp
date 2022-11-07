@@ -2,7 +2,7 @@ import {After, And, Then, When} from '@badeball/cypress-cucumber-preprocessor';
 
 When('the user change the locale to Spanish', () => {
     cy.get('button[name="Users"]').click({force: true});
-    cy.getByLabel('Select locale').select('es', {force: true});
+    cy.get('select[id="selectLocale"]').select('es', {force: true});
 });
 
 And("user clicks on patient search option", () => {
