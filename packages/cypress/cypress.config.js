@@ -6,7 +6,7 @@ const { createEsbuildPlugin } = require('@badeball/cypress-cucumber-preprocessor
 
 module.exports = defineConfig({
   video: true,
-  defaultCommandTimeout: 40000,
+  defaultCommandTimeout: 60000,
   env: {
     API_BASE_URL: 'http://localhost/openmrs/ws/rest/v1',
     ADMIN_USERNAME: 'admin',
@@ -18,7 +18,7 @@ module.exports = defineConfig({
   viewportWidth: 1800,
   viewportHeight: 900,
   retries: {
-    runMode: 2,
+    runMode: 0,
     openMode: 0,
   },
   chromeWebSecurity: false,
