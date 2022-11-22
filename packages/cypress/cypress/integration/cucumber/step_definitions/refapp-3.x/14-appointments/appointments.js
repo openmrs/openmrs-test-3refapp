@@ -14,7 +14,7 @@ When("a user clicks on Appointments tab", () => {
 });
 
 Then("the empty upcoming appointment table should displayed", () => {
-  cy.contains("There are no upcoming appointments to display for this patient");
+  cy.contains("There are no appointments scheduled for today to display for this patient");
 });
 
 When("the user clicks on past appointments section", () => {
@@ -22,7 +22,7 @@ When("the user clicks on past appointments section", () => {
 });
 
 Then("the empty past appointment table should displayed", () => {
-  cy.contains("There are no appointments scheduled for today to display for this patient");
+  cy.contains("There are no past appointments to display for this patient");
 });
 
 //ToDo: requests an appointment
