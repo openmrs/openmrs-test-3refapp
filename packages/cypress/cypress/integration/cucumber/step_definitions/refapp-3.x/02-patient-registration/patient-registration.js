@@ -11,7 +11,7 @@ When('the user enters {string} details for Andria Faiza', validity => {
             middleName: 'Kumbha',
             familyName: 'Faiza',
             gender: 'Female',
-            address1: '55372,test',
+            address1: 'chamkar leu',
             phone: '+211 34 567890'
         },
         wrong: {
@@ -41,16 +41,8 @@ When('the user enters {string} details for Andria Faiza', validity => {
         cy.contains(user.gender).click({force: true});
     }
     if (user.address != null) {
-        cy.getByLabel('Address Line 1').type(user.address, {force: true});
-    }
-    if (user.country != null) {
-        cy.getByLabel('Country').clear({force: true}).type(user.country, {force: true});
-    }
-    if (user.stateProvince != null) {
-        cy.getByLabel('State').type(user.stateProvince, {force: true});
-    }
-    if (user.cityVillage != null) {
-        cy.getByLabel('City').type(user.cityVillage, {force: true});
+        cy.getByLabel('Search address').type(user.address, {force: true});
+        cy.contains('Cambodia > Kampong Cham > Chamkar Leu').click();
     }
     if (user.phoneNumber != null) {
         cy.getByLabel('Phone number (optional)').type(user.phone, {force: true});
@@ -70,7 +62,7 @@ Then('the patient registration should be {string}', status => {
             cy.contains('New Patient Created');
             break;
         case 'unsuccessful':
-            cy.get('input[aria-invalid="true"]').should('have.length.greaterThan', 0);
+            cy.contains('Incomplete form');
             break;
         default:
             throw new Error(`Status '${status}' is not supported`);
