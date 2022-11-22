@@ -1,4 +1,4 @@
-import {Before, After, And, Then, When} from '@badeball/cypress-cucumber-preprocessor';
+import { Then, When } from '@badeball/cypress-cucumber-preprocessor';
 
 let patient = null;
 
@@ -6,7 +6,6 @@ When('the user arrives on a patient’s chart page', () => {
   cy.createPatient().then((generatedPatient) => {
     patient = generatedPatient;
     cy.visit(`patient/${patient.uuid}/chart`);
-    // cy.startFacilityVisit(patient.uuid);
   });
 });
 
