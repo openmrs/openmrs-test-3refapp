@@ -304,9 +304,9 @@ Cypress.Commands.add('createPatient', (identifier = null) => {
             names: [
                 {
                     preferred: true,
-                    givenName: 'John',
+                    givenName: 'Harry',
                     middleName: '',
-                    familyName: 'Doe'
+                    familyName: 'Potter'
                 }
 
             ],
@@ -315,12 +315,13 @@ Cypress.Commands.add('createPatient', (identifier = null) => {
             birthdateEstimated: false,
             attributes: [],
             addresses: [
-                {
-                country:"Cambodia",
-                countyDistrict:"Kampong Cham",
-                address1:"Chamkar Leu",
-                stateProvince:"",
-                cityVillage:""
+              {
+                postalCode: '0100',
+                address2: '',
+                address1: 'Haha',
+                country: 'Sri Lanka',
+                stateProvince: 'Western',
+                cityVillage: 'Colombo 5'
               }
             ],
             dead: false

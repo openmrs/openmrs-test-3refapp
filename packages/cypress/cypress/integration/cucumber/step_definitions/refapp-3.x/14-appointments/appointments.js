@@ -1,4 +1,4 @@
-import { Before, Then, When, After } from '@badeball/cypress-cucumber-preprocessor';
+import { Then, When} from '@badeball/cypress-cucumber-preprocessor';
 
 let patient = null;
 

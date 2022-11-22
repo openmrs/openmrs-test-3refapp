@@ -9,5 +9,5 @@ Feature: Patient Search
     Then the result should be "<result>"
     Examples:
       | patientName  | result            |
-      | John Doe     | John Doe          |
+      | Richard Jones   | Richard Jones    |
       | non existing | Sorry, no patient |
