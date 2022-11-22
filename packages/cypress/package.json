@@ -34,7 +34,7 @@
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": [
-      "cypress/integration/cucumber/step_definitions/**/**/*.js",
+      "cypress/integration/cucumber/step_definitions/refapp-3.x/[filepart]/*.js",
       "cypress/integration/common/**/*.js"
     ]
   },

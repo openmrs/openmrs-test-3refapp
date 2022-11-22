@@ -2,9 +2,10 @@ import { Before, Then, When, After } from '@badeball/cypress-cucumber-preprocess
 
 let patient = null;
 
-Before({tags: '@patient-conditions' }, () => {
+When('the user arrives on a patient’s chart page', () => {
   cy.createPatient().then((generatedPatient) => {
     patient = generatedPatient;
+    cy.visit(`patient/${patient.uuid}/chart`);
   });
 });
 
@@ -25,8 +26,4 @@ When("the user record a condition", () => {
 
 Then("the condition should record successfully", () => {
   cy.contains("Condition saved");
-});
-
-After({tags: '@patient-conditions'}, () => {
-  cy.deletePatient(patient.uuid);
 });

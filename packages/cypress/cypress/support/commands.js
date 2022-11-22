@@ -7,11 +7,6 @@ const ADMIN_PASSWORD = Cypress.env('ADMIN_PASSWORD');
 const DEFAULT_LOCATION_UUID = Cypress.env('DEFAULT_LOCATION_UUID');
 const TOKEN = window.btoa(`${ADMIN_USERNAME}:${ADMIN_PASSWORD}`);
 
-beforeEach("Restore database",() => {
-    //Run the script
-    cy.exec("bash scripts/resetDB.sh");
-})
-
 Cypress.Commands.add('runAndAwait', (callable, method='GET', addArtificialWait=false) => {
     const requestId = `apiRequest-${uuid()}`;
 
@@ -316,18 +311,17 @@ Cypress.Commands.add('createPatient', (identifier = null) => {
 
             ],
             gender: 'M',
-            birthdate: '1997-09-12T18:00:00.000Z',
+            birthdate: '2022-6-1',
             birthdateEstimated: false,
             attributes: [],
             addresses: [
                 {
-                    postalCode: '0100',
-                    address2: '',
-                    address1: 'Haha',
-                    country: 'Sri Lanka',
-                    stateProvince: 'Western',
-                    cityVillage: 'Colombo 5'
-                }
+                country:"Cambodia",
+                countyDistrict:"Kampong Cham",
+                address1:"Chamkar Leu",
+                stateProvince:"",
+                cityVillage:""
+              }
             ],
             dead: false
         },
@@ -351,6 +345,7 @@ Cypress.Commands.add('createPatient', (identifier = null) => {
                 Authorization: `Basic ${TOKEN}`,
             },
         }).then((resp) => {
+            console.log(resp.body)
             cy.wrap(resp.body);
         });
     } else {
@@ -365,6 +360,7 @@ Cypress.Commands.add('createPatient', (identifier = null) => {
                     Authorization: `Basic ${TOKEN}`,
                 },
             }).then((resp) => {
+                console.log(resp.body)
                 cy.wrap(resp.body);
             });
         });

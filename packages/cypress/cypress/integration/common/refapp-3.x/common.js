@@ -1,4 +1,9 @@
-import {Given, And} from '@badeball/cypress-cucumber-preprocessor';
+import {Given, And, Before} from '@badeball/cypress-cucumber-preprocessor';
+
+Before(() => {
+  cy.log("Resetting the database")
+  cy.exec("bash scripts/resetDB.sh");
+});
 
 Given('the user login to the Outpatient Clinic', () => {
     cy.on('uncaught:exception', (err, runnable) => {
@@ -7,9 +12,9 @@ Given('the user login to the Outpatient Clinic', () => {
       cy.login();
       cy.visit('home');
   })
-  
-And('the user arrives on a patient’s chart page', () => {
-    cy.get('button[name=SearchPatientIcon]').click();
-    cy.getByPlaceholder('Search for a patient by name or identifier number').type('John Doe')
-    cy.contains('John Doe').first().click({force: true});
-});
+
+// And('the user arrives on a patient’s chart page', () => {
+//   cy.createPatient().then((generatedPatient) => {
+//     cy.visit(`patient/${generatedPatient.uuid}/chart`);
+//   });
+// });

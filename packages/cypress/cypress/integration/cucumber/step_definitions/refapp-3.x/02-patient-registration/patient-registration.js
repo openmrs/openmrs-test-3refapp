@@ -12,10 +12,6 @@ When('the user enters {string} details for Andria Faiza', validity => {
             familyName: 'Faiza',
             gender: 'Female',
             address1: '55372,test',
-            cityVillage: 'Nairobi',
-            stateProvince: 'Nairobi',
-            country: 'Kenya',
-            postalCode: '00100',
             phone: '+211 34 567890'
         },
         wrong: {
@@ -24,10 +20,6 @@ When('the user enters {string} details for Andria Faiza', validity => {
             familyName: 'Mwangi',
             gender: 'Female',
             address1: null,
-            cityVillage: null,
-            stateProvince: null,
-            country: null,
-            postalCode: null,
             phone: null
         }
     };
@@ -52,19 +44,16 @@ When('the user enters {string} details for Andria Faiza', validity => {
         cy.getByLabel('Address Line 1').type(user.address, {force: true});
     }
     if (user.country != null) {
-        cy.getByLabel('country').clear({force: true}).type(user.country, {force: true});
+        cy.getByLabel('Country').clear({force: true}).type(user.country, {force: true});
     }
     if (user.stateProvince != null) {
-        cy.getByLabel('stateProvince').type(user.stateProvince, {force: true});
+        cy.getByLabel('State').type(user.stateProvince, {force: true});
     }
     if (user.cityVillage != null) {
-        cy.getByLabel('cityVillage').type(user.cityVillage, {force: true});
-    }
-    if (user.postalCode != null) {
-        cy.getByLabel('postalCode').type(user.postalCode, {force: true});
+        cy.getByLabel('City').type(user.cityVillage, {force: true});
     }
     if (user.phoneNumber != null) {
-        cy.getByLabel('Phone number(optional)').type(user.phone, {force: true});
+        cy.getByLabel('Phone number (optional)').type(user.phone, {force: true});
     }
     // Click on the first day on the calendar because the calendar doesn't support manual inputs
     cy.getByLabel('Date of Birth').click({force: true});
