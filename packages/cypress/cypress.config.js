@@ -18,7 +18,7 @@ module.exports = defineConfig({
   viewportWidth: 1800,
   viewportHeight: 900,
   retries: {
-    runMode: 1,
+    runMode: 2,
     openMode: 0,
   },
   chromeWebSecurity: false,
