@@ -28,6 +28,9 @@ When('the user enters {string} details for Andria Faiza', validity => {
         throw new Error(`Validity '${validity}' is not supported`);
     }
     const user = details[validity];
+
+    cy.contains('Register Patient').should('not.be.disabled')
+
     if (user.givenName != null) {
         cy.getByLabel('First Name').type(user.givenName, {force: true});
     }
