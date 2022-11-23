@@ -53,7 +53,7 @@ When('the user enters {string} details for Andria Faiza', validity => {
 })
 
 When('the user clicks on the create patient button', () => {
-    cy.contains('Register Patient').click({force: true})
+    cy.contains('Register Patient').click()
 })
 
 Then('the patient registration should be {string}', status => {
