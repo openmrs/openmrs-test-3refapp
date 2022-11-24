@@ -19,8 +19,7 @@ Feature: Clinical Visit
 
   @clinical-visit
   Scenario: User should be able to end a visit
-    When user selects "Start visit"
-    And the user starts a visit
+    When the user arrives on a patient chart page of a patient with an active visit
     And the user clicks on Actions button
     And user selects "Cancel Visit"
     And the user confirm cancellation
