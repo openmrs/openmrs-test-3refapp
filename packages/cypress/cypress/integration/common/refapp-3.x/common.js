@@ -10,5 +10,8 @@ Given('the user login to the Outpatient Clinic', () => {
         return false;
     });
     cy.login();
+});
+
+Given('the user visit the home page', () => {
     cy.visit('home');
-})
+});
