@@ -25,7 +25,7 @@ Then('the Patient header should display correct information', () => {
 });
 
 Then('the user should be able to expand header to see more information', () => {
-    cy.contains('Show all details').click({force: true});
+    cy.contains('Show all details').click();
     cy.contains('Address');
 });
 
@@ -46,20 +46,20 @@ Then('the Patient Summary should load properly', () => {
 });
 
 When('the user clicks on Actions button', () => {
-    cy.get('div[role="banner"]').contains("Actions").click({force: true});
+    cy.get('div[role="banner"]').contains("Actions").click();
 });
 
 When('user selects {string}', (visitOption) => {
-    cy.contains(visitOption).click({force: true});
+    cy.contains(visitOption).click();
 });
 
 When('the user starts a visit', () => {
-    cy.get('input[id="visitStartDateInput"]').type('01/09/2022', {force: true});
-    cy.get('input[id="visitStartTime"]').type('05:12', {force: true});
+    cy.get('input[id="visitStartDateInput"]').type('01/09/2022', );
+    cy.get('input[id="visitStartTime"]').type('05:12', );
     cy.get('#visitStartTimeSelect').select('PM');
     cy.get('#location').select('Outpatient Clinic');
     cy.contains('Facility Visit').click();
-    cy.get('button[type="submit"').click({force: true});
+    cy.get('button[type="submit"').click();
 });
 
 Then('Visit should be saved and started', () => {
@@ -67,7 +67,7 @@ Then('Visit should be saved and started', () => {
 });
 
 When('the user confirm cancellation', () => {
-    cy.get('.omrs-modals-container').contains('Cancel Visit').click({force: true});
+    cy.get('.omrs-modals-container').contains('Cancel Visit').click();
 });
 
 Then('the visit should have ended', () => {
