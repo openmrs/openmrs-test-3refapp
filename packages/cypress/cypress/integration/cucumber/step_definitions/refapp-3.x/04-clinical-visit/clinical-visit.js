@@ -9,6 +9,15 @@ When('the user arrives on a patient’s chart page', () => {
   });
 });
 
+When('the user arrives on a patient chart page of a patient with an active visit', () => {
+    cy.createPatient().then((generatedPatient) => {
+        patient = generatedPatient;
+        cy.startFacilityVisit(patient.uuid).then(()=>{
+            cy.visit(`patient/${patient.uuid}/chart`);
+        });
+    });
+});
+
 Then('the Patient header should display correct information', () => {
     cy.contains(patient.person.display);
     cy.contains(patient.person.age);
@@ -55,21 +64,6 @@ When('the user starts a visit', () => {
 
 Then('Visit should be saved and started', () => {
     cy.get('div[data-extension-slot-name="patient-banner-tags-slot"]').contains('Active Visit');
-});
-
-When('the user edits a visit', () => {
-    cy.get('input[id="visitStartDateInput"]').type('20/07/2022', {force: true});
-    cy.get('input[id="visitStartTime"]').type('06:10', {force: true});
-    cy.get('#visitStartTimeSelect').select('AM');
-    cy.get('#location').select('Outpatient Clinic');
-    cy.get('section [type="radio"]').check('Facility Visit')
-    cy.get('button[type="submit"').click({force: true});
-});
-
-When('the user clicks on Edit past Visit', () => {
-    cy.window().then((win) => {
-        cy.contains('Edit Past Visit').click({force: true});
-    })
 });
 
 When('the user confirm cancellation', () => {
