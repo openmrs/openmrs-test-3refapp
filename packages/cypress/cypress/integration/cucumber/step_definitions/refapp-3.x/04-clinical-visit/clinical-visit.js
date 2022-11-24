@@ -67,7 +67,7 @@ Then('Visit should be saved and started', () => {
 });
 
 When('the user confirm cancellation', () => {
-    cy.contains('Cancel Visit').click({force: true});
+    cy.get('.omrs-modals-container').contains('Cancel Visit').click({force: true});
 });
 
 Then('the visit should have ended', () => {
