@@ -7,7 +7,7 @@ const ADMIN_PASSWORD = Cypress.env('ADMIN_PASSWORD');
 const DEFAULT_LOCATION_UUID = Cypress.env('DEFAULT_LOCATION_UUID');
 const TOKEN = window.btoa(`${ADMIN_USERNAME}:${ADMIN_PASSWORD}`);
 
-Cypress.Commands.add('runAndAwait', (callable, method = 'GET', addArtificialWait = false) => {
+Cypress.Commands.add('runAndAwait', (callable, method='GET', addArtificialWait=false) => {
     const requestId = `apiRequest-${uuid()}`;
 
     cy.server();
@@ -304,14 +304,14 @@ Cypress.Commands.add('createPatient', (identifier = null) => {
             names: [
                 {
                     preferred: true,
-                    givenName: 'Harry',
+                    givenName: 'John',
                     middleName: '',
-                    familyName: 'Potter'
+                    familyName: 'Doe'
                 }
 
             ],
             gender: 'M',
-            birthdate: '2022-6-1',
+            birthdate: '1997-09-12T18:00:00.000Z',
             birthdateEstimated: false,
             attributes: [],
             addresses: [
