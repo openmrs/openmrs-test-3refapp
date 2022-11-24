@@ -304,9 +304,9 @@ Cypress.Commands.add('createPatient', (identifier = null) => {
             names: [
                 {
                     preferred: true,
-                    givenName: 'John',
+                    givenName: 'Harry',
                     middleName: '',
-                    familyName: 'Doe'
+                    familyName: 'Potter'
                 }
 
             ],
