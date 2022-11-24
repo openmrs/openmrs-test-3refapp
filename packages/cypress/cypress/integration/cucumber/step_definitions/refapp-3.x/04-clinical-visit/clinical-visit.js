@@ -1,11 +1,20 @@
-import {Before, After, And, Then, When} from '@badeball/cypress-cucumber-preprocessor';
+import { Then, When } from '@badeball/cypress-cucumber-preprocessor';
 
 let patient = null;
 
-Before({tags: '@clinical-visit'}, () => {
+When('the user arrives on a patient’s chart page', () => {
+  cy.createPatient().then((generatedPatient) => {
+    patient = generatedPatient;
+    cy.visit(`patient/${patient.uuid}/chart`);
+  });
+});
+
+When('the user arrives on a patient chart page of a patient with an active visit', () => {
     cy.createPatient().then((generatedPatient) => {
         patient = generatedPatient;
-        cy.startFacilityVisit(patient.uuid);
+        cy.startFacilityVisit(patient.uuid).then(()=>{
+            cy.visit(`patient/${patient.uuid}/chart`);
+        });
     });
 });
 
@@ -16,7 +25,7 @@ Then('the Patient header should display correct information', () => {
 });
 
 Then('the user should be able to expand header to see more information', () => {
-    cy.contains('Show all details').click({force: true});
+    cy.contains('Show all details').click();
     cy.contains('Address');
 });
 
@@ -36,53 +45,32 @@ Then('the Patient Summary should load properly', () => {
     cy.get('div[data-extension-slot-name="patient-chart-dashboard-slot"]').contains('Offline actions');
 });
 
-When('the user clicks on {string} button', (actions) => {
-    cy.contains(actions).click({force: true});
+When('the user clicks on Actions button', () => {
+    cy.get('div[role="banner"]').contains("Actions").click();
 });
 
-And('user selects {string}', (visitOption) => {
-    cy.contains(visitOption).click({force: true});
+When('user selects {string}', (visitOption) => {
+    cy.contains(visitOption).click();
 });
 
-Then('the user starts a vist', () => {
-    cy.get('input[id="visitStartDateInput"]').type('01/09/2022', {force: true});
-    cy.get('input[id="visitStartTime"]').type('05:12', {force: true});
+When('the user starts a visit', () => {
+    cy.get('input[id="visitStartDateInput"]').type('01/09/2022', );
+    cy.get('input[id="visitStartTime"]').type('05:12', );
     cy.get('#visitStartTimeSelect').select('PM');
     cy.get('#location').select('Outpatient Clinic');
-    cy.get('section [type="radio"]').check('Facility Visit')
-    cy.get('button[type="submit"').click({force: true});
+    cy.contains('Facility Visit').click();
+    cy.get('button[type="submit"').click();
 });
 
 Then('Visit should be saved and started', () => {
-    cy.contains('Visit started');
-    cy.reload();
-    cy.get('div[data-extension-slot-name="patient-header-slot"]').contains('Active Visit');
+    cy.get('div[data-extension-slot-name="patient-banner-tags-slot"]').contains('Active Visit');
 });
 
-Then('the user edits a vist', () => {
-    cy.get('input[id="visitStartDateInput"]').type('20/07/2022', {force: true});
-    cy.get('input[id="visitStartTime"]').type('06:10', {force: true});
-    cy.get('#visitStartTimeSelect').select('AM');
-    cy.get('#location').select('Outpatient Clinic');
-    cy.get('section [type="radio"]').check('Facility Visit')
-    cy.get('button[type="submit"').click({force: true});
+When('the user confirm cancellation', () => {
+    cy.get('.omrs-modals-container').contains('Cancel Visit').click();
 });
 
-Then('the user clicks on Edit past Visit', () => {
-    cy.window().then((win) => {
-        cy.contains('Edit Past Visit').click({force: true});
-    })
+Then('the visit should have ended', () => {
+  cy.get('div[data-extension-slot-name="patient-banner-tags-slot"]').contains('Active Visit').should('not.exist');
 });
 
-And('the user selects Edit', () => {
-    cy.get("aside table tbody tr").first().focus()
-    cy.contains('...').click({force: true});
-    cy.contains('Edit').click({force: true});
-    cy.window().then((win) => {
-        cy.contains('Open anyway').click({force: true});
-    })
-});
-
-After({tags: '@clinical-visit'}, () => {
-    cy.deletePatient(patient.uuid);
-});

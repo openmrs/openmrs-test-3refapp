@@ -1,10 +1,11 @@
-import { Before, Then, When, After } from '@badeball/cypress-cucumber-preprocessor';
+import {Then, When} from '@badeball/cypress-cucumber-preprocessor';
 
 let patient = null;
 
-Before({tags: '@form-management' }, () => {
+When('the user arrives on a patient’s chart page', () => {
   cy.createPatient().then((generatedPatient) => {
     patient = generatedPatient;
+    cy.visit(`patient/${patient.uuid}/chart`);
   });
 });
 
@@ -14,10 +15,6 @@ When("the user clicks on Forms & Notes tab", () => {
 
 Then('the form table should displayed', () => {
     cy.contains("Test Form 1");
-});
-
-After({tags: '@form-management'}, () => {
-  cy.deletePatient(patient.uuid);
 });
 
 //TODO: Form management section is still under development.

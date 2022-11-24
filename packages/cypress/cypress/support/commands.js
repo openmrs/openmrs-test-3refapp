@@ -7,11 +7,6 @@ const ADMIN_PASSWORD = Cypress.env('ADMIN_PASSWORD');
 const DEFAULT_LOCATION_UUID = Cypress.env('DEFAULT_LOCATION_UUID');
 const TOKEN = window.btoa(`${ADMIN_USERNAME}:${ADMIN_PASSWORD}`);
 
-beforeEach("Restore database",() => {
-    //Run the script
-    cy.exec("bash scripts/resetDB.sh");
-})
-
 Cypress.Commands.add('runAndAwait', (callable, method='GET', addArtificialWait=false) => {
     const requestId = `apiRequest-${uuid()}`;
 
@@ -28,8 +23,8 @@ Cypress.Commands.add('runAndAwait', (callable, method='GET', addArtificialWait=f
 
 Cypress.Commands.add('initiateExceptionsLogger', () => {
     Cypress.on('uncaught:exception', (err, runnable) => {
-    	console.log(err);
-    	return false;
+        console.log(err);
+        return false;
     });
 });
 
@@ -309,9 +304,9 @@ Cypress.Commands.add('createPatient', (identifier = null) => {
             names: [
                 {
                     preferred: true,
-                    givenName: 'John',
+                    givenName: 'Harry',
                     middleName: '',
-                    familyName: 'Doe'
+                    familyName: 'Potter'
                 }
 
             ],

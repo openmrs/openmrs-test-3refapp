@@ -1,10 +1,11 @@
-import { Before, Then, When, After } from '@badeball/cypress-cucumber-preprocessor';
+import { Then, When } from '@badeball/cypress-cucumber-preprocessor';
 
 let patient = null;
 
-Before({tags: '@vitals-and-biometrics' }, () => {
+When('the user arrives on a patient’s chart page', () => {
   cy.createPatient().then((generatedPatient) => {
     patient = generatedPatient;
+    cy.visit(`patient/${patient.uuid}/chart`);
   });
 });
 
@@ -40,8 +41,4 @@ Then("the vitals needs to be displayed on the Vitals table", () => {
   cy.contains("160");
   cy.contains("60");
   cy.contains("23.4");
-});
-
-After({tags: '@vitals-and-biometrics'}, () => {
-  cy.deletePatient(patient.uuid);
 });

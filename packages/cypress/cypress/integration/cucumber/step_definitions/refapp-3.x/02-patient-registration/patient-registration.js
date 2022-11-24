@@ -11,11 +11,7 @@ When('the user enters {string} details for Andria Faiza', validity => {
             middleName: 'Kumbha',
             familyName: 'Faiza',
             gender: 'Female',
-            address1: '55372,test',
-            cityVillage: 'Nairobi',
-            stateProvince: 'Nairobi',
-            country: 'Kenya',
-            postalCode: '00100',
+            address1: 'chamkar leu',
             phone: '+211 34 567890'
         },
         wrong: {
@@ -24,10 +20,6 @@ When('the user enters {string} details for Andria Faiza', validity => {
             familyName: 'Mwangi',
             gender: 'Female',
             address1: null,
-            cityVillage: null,
-            stateProvince: null,
-            country: null,
-            postalCode: null,
             phone: null
         }
     };
@@ -36,6 +28,9 @@ When('the user enters {string} details for Andria Faiza', validity => {
         throw new Error(`Validity '${validity}' is not supported`);
     }
     const user = details[validity];
+
+    cy.contains('Register Patient').should('not.be.disabled')
+
     if (user.givenName != null) {
         cy.getByLabel('First Name').type(user.givenName, {force: true});
     }
@@ -49,22 +44,11 @@ When('the user enters {string} details for Andria Faiza', validity => {
         cy.contains(user.gender).click({force: true});
     }
     if (user.address != null) {
-        cy.getByLabel('Address Line 1').type(user.address, {force: true});
-    }
-    if (user.country != null) {
-        cy.getByLabel('country').clear({force: true}).type(user.country, {force: true});
-    }
-    if (user.stateProvince != null) {
-        cy.getByLabel('stateProvince').type(user.stateProvince, {force: true});
-    }
-    if (user.cityVillage != null) {
-        cy.getByLabel('cityVillage').type(user.cityVillage, {force: true});
-    }
-    if (user.postalCode != null) {
-        cy.getByLabel('postalCode').type(user.postalCode, {force: true});
+        cy.getByLabel('Search address').type(user.address, {force: true});
+        cy.contains('Cambodia > Kampong Cham > Chamkar Leu').click();
     }
     if (user.phoneNumber != null) {
-        cy.getByLabel('Phone number(optional)').type(user.phone, {force: true});
+        cy.getByLabel('Phone number (optional)').type(user.phone, {force: true});
     }
     // Click on the first day on the calendar because the calendar doesn't support manual inputs
     cy.getByLabel('Date of Birth').click({force: true});
@@ -72,7 +56,7 @@ When('the user enters {string} details for Andria Faiza', validity => {
 })
 
 When('the user clicks on the create patient button', () => {
-    cy.contains('Register Patient').click({force: true})
+    cy.contains('Register Patient').click()
 })
 
 Then('the patient registration should be {string}', status => {
@@ -81,7 +65,7 @@ Then('the patient registration should be {string}', status => {
             cy.contains('New Patient Created');
             break;
         case 'unsuccessful':
-            cy.get('input[aria-invalid="true"]').should('have.length.greaterThan', 0);
+            cy.contains('Incomplete form');
             break;
         default:
             throw new Error(`Status '${status}' is not supported`);

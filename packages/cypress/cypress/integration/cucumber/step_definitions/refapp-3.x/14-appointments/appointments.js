@@ -1,10 +1,11 @@
-import { Before, Then, When, After } from '@badeball/cypress-cucumber-preprocessor';
+import { Then, When } from '@badeball/cypress-cucumber-preprocessor';
 
 let patient = null;
 
-Before({tags: '@appointments' }, () => {
+When('the user arrives on a patient’s chart page', () => {
   cy.createPatient().then((generatedPatient) => {
     patient = generatedPatient;
+    cy.visit(`patient/${patient.uuid}/chart`);
   });
 });
 
@@ -13,7 +14,7 @@ When("a user clicks on Appointments tab", () => {
 });
 
 Then("the empty upcoming appointment table should displayed", () => {
-  cy.contains("There are no upcoming appointments to display for this patient");
+  cy.contains("There are no appointments scheduled for today to display for this patient");
 });
 
 When("the user clicks on past appointments section", () => {
@@ -22,10 +23,6 @@ When("the user clicks on past appointments section", () => {
 
 Then("the empty past appointment table should displayed", () => {
   cy.contains("There are no past appointments to display for this patient");
-});
-
-After({tags: '@appointments'}, () => {
-  cy.deletePatient(patient.uuid);
 });
 
 //ToDo: requests an appointment

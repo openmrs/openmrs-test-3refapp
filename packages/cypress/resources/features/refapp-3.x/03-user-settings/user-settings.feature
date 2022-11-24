@@ -2,6 +2,7 @@ Feature: User Settings
 
   Background:
     Given the user login to the Outpatient Clinic
+    And the user visit the home page
 
   @user-settings
   @locale

@@ -34,4 +34,6 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Screen recordings of failed tests
-          path: packages/cypress/cypress/videos
+          path: |
+            packages/cypress/cypress/videos
+            packages/cypress/cypress/screenshots

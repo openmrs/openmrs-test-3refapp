@@ -1,10 +1,11 @@
-import { Before, Then, When, After } from '@badeball/cypress-cucumber-preprocessor';
+import { Then, When } from '@badeball/cypress-cucumber-preprocessor';
 
 let patient = null;
 
-Before({tags: '@patient-allergies' }, () => {
+When('the user arrives on a patient’s chart page', () => {
   cy.createPatient().then((generatedPatient) => {
     patient = generatedPatient;
+    cy.visit(`patient/${patient.uuid}/chart`);
   });
 });
 
@@ -14,10 +15,6 @@ When("the user clicks on Allergies tab", () => {
 
 Then("the empty allergies section should be displayed", () => {
   cy.contains("There are no allergy intolerances to display for this patient");
-});
-
-After({tags: '@patient-allergies'}, () => {
-  cy.deletePatient(patient.uuid);
 });
 
 // TODO: Record allergies
