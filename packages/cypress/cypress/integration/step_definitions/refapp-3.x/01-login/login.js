@@ -34,7 +34,7 @@ describe('Login Test', () => {
             })
 
             it(`the user should be ${loginCase.ability} to login`, () => {
-                switch (ability) {
+                switch (loginCase.ability) {
                     case "able":
                         cy.url().should('include', '/home');
                         break;
