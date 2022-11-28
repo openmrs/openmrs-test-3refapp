@@ -6,24 +6,22 @@
   "scripts": {
     "delete:reports": "rm cypress/results/* || true",
     "combine:reports": "jrm cypress/results/combined-report.xml \"cypress/results/*.xml\"",
-    "allCypressTest": "cypress run --spec 'resources/features/refapp-3.x/**/*.feature' --reporter junit --reporter-options mochaFile='cypress/results/test-[hash].xml',outputs=true",
+    "allCypressTest": "cypress run --spec 'cypress/integration/step_definitions/refapp-3.x/**/*.js' --reporter junit --reporter-options mochaFile='cypress/results/test-[hash].xml',outputs=true",
     "refappCypress": "npm-run-all delete:reports allCypressTest combine:reports -c",
-    "refapp3Login": "cypress run --spec resources/features/refapp-3.x/01-login/login.feature",
-    "refapp3Logout": "cypress run --spec resources/features/refapp-3.x/07-logout/logout.feature",
-    "refapp3PatientRegistration": "cypress run --spec resources/features/refapp-3.x/02-patient-registration/patient-registration.feature",
-    "refapp3PatientSearch": "cypress run --spec resources/features/refapp-3.x/06-patient-search/patient-search.feature",
-    "refapp3UserSettings": "cypress run --spec resources/features/refapp-3.x/03-user-settings/user-settings.feature",
-    "refapp3ClinicalVisit": "cypress run --spec resources/features/refapp-3.x/04-clinical-visit/clinical-visit.feature",
-    "refapp3VitalsAndBiometrics": "cypress run --spec resources/features/refapp-3.x/05-vitals-and-biometrics/vitals-and-biometrics.feature",
-    "refapp3FormManagement": "cypress run --spec resources/features/refapp-3.x/08-form-management/form-management.feature",
-    "refapp3PatientConditions": "cypress run --spec resources/features/refapp-3.x/12-patient-conditions/patient-conditions.feature",
-    "refapp3PatientAllergies": "cypress run --spec resources/features/refapp-3.x/13-patient-allergies/patient-allergies.feature",
-    "refapp3Appointments": "cypress run --spec resources/features/refapp-3.x/14-appointments/appointments.feature",
-    "refapp3CarePrograms": "cypress run --spec resources/features/refapp-3.x/10-care-programs/care-programs.feature"
+    "refapp3Login": "cypress run --spec cypress/integration/step_definitions/refapp-3.x/01-login/login.js",
+    "refapp3Logout": "cypress run --spec cypress/integration/step_definitions/refapp-3.x/07-logout/logout.js",
+    "refapp3PatientRegistration": "cypress run --spec cypress/integration/step_definitions/refapp-3.x/02-patient-registration/patient-registration.js",
+    "refapp3PatientSearch": "cypress run --spec cypress/integration/step_definitions/refapp-3.x/06-patient-search/patient-search.js",
+    "refapp3UserSettings": "cypress run --spec cypress/integration/step_definitions/refapp-3.x/03-user-settings/user-settings.js",
+    "refapp3ClinicalVisit": "cypress run --spec cypress/integration/step_definitions/refapp-3.x/04-clinical-visit/clinical-visit.js",
+    "refapp3VitalsAndBiometrics": "cypress run --spec cypress/integration/step_definitions/refapp-3.x/05-vitals-and-biometrics/vitals-and-biometrics.js",
+    "refapp3FormManagement": "cypress run --spec cypress/integration/step_definitions/refapp-3.x/08-form-management/form-management.js",
+    "refapp3PatientConditions": "cypress run --spec cypress/integration/step_definitions/refapp-3.x/12-patient-conditions/patient-conditions.js",
+    "refapp3PatientAllergies": "cypress run --spec cypress/integration/step_definitions/refapp-3.x/13-patient-allergies/patient-allergies.js",
+    "refapp3Appointments": "cypress run --spec cypress/integration/step_definitions/refapp-3.x/14-appointments/appointments.js",
+    "refapp3CarePrograms": "cypress run --spec cypress/integration/step_definitions/refapp-3.x/10-care-programs/care-programs.js"
   },
   "devDependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^12.2.0",
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.3",
     "@testing-library/cypress": "^8.0.0",
     "@types/uuid": "3.4.7",
     "cypress": "^10.4.0",
@@ -34,8 +32,7 @@
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": [
-      "cypress/integration/cucumber/step_definitions/refapp-3.x/[filepart]/*.js",
-      "cypress/integration/common/**/*.js"
+      "cypress/integration/cucumber/step_definitions/refapp-3.x/[filepart]/*.js"
     ]
   },
   "dependencies": {

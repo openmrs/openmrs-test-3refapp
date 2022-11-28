@@ -1,8 +1,6 @@
 const { defineConfig } = require('cypress')
 const createBundler = require('@bahmutov/cypress-esbuild-preprocessor');
 const nodePolyfills = require('@esbuild-plugins/node-modules-polyfill').NodeModulesPolyfillPlugin;
-const { addCucumberPreprocessorPlugin } = require('@badeball/cypress-cucumber-preprocessor');
-const { createEsbuildPlugin } = require('@badeball/cypress-cucumber-preprocessor/esbuild');
 
 module.exports = defineConfig({
   video: true,
@@ -25,14 +23,13 @@ module.exports = defineConfig({
   e2e: {
     async setupNodeEvents(on, config) {
       const bundler = createBundler({
-        plugins: [nodePolyfills(), createEsbuildPlugin(config)],
+        plugins: [nodePolyfills()],
       });
       on("file:preprocessor", bundler);
-      await addCucumberPreprocessorPlugin(on, config);
 
       return config;
     },
-    specPattern: "resources/features/**/**/*.feature",
+    specPattern: "cypress/integration/step_definitions/**/**/*.js",
     supportFile: './cypress/support/e2e.js',
     baseUrl: 'http://localhost/openmrs/spa'
   },
