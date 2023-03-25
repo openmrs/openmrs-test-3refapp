@@ -81,7 +81,7 @@ Follow this steps for setting up the local instance
 
 
 ## Creating a GitHub workflow
-1. Create a new GitHub workflow file under `.github/workflows/` directory. An example workflow can be found [here](https://github.com/openmrs/openmrs-contrib-qaframework/blob/master/.github/workflows/refapp-3x-login.yml).
+1. Create a new GitHub workflow file under `.github/workflows/` directory. An example workflow can be found [here](https://github.com/ayush-AI/openmrs-test-3refapp/blob/main/.github/workflows/refapp-3x-login.yml).
 2. Add the workflow badge to the readme file under [3.x RefApp](https://github.com/openmrs/openmrs-test-3refapp/blob/main/README.md#qa-dashboard-for-refapp-3x-project-status) section. It should take the following format:
     ```markdown
     [![<workflow name>](<link-to-the-workflow>/badge.svg)](<link-to-the-workflow>)
